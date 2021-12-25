@@ -1,4 +1,5 @@
 import React from "react"
+import UserTicker from "./UserTicker.js"
 import "../styles/header.css"
 
 class Header extends React.Component {
@@ -21,21 +22,34 @@ class Header extends React.Component {
 	}
 
 	render() {
-		let title;
 		if (this.state.width < 650) {
-			title = <h1><span>WWM</span><span>MOBILE</span></h1>;
+			return (
+				<header>
+					<div>
+						<hr/>
+						<UserTicker/>
+						<hr/>
+					</div>
+					<h1>“BETTER ON DESKTOP”</h1>
+					<hr id="underline"/>
+					<p id="desc">{this.props.description}</p>
+				</header>
+			)
 		} else if (this.state.width < 1101) {
-			title = <h1>WWM WWM WWM</h1>;
+			return (
+				<header>
+					<p id="desc">{this.props.description}</p>
+					<h1>WWM WWM WWM</h1>
+				</header>
+			)
 		} else {
-			title = <h1>MARX MARX MARX</h1>;
+			return (
+				<header>
+					<p id="desc">{this.props.description}</p>
+					<h1>MARX MARX MARX</h1>
+				</header>
+			)
 		}
-
-		return (
-			<header>
-				<p id="desc">{this.props.description}</p>
-				{title}
-			</header>
-		)
 	}
 }
 

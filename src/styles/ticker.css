@@ -52,6 +52,10 @@
 
 @media only screen and (max-width: 650px) {
 	.ticker img {
-		height: 80px;
+		height: 70px;
+	}
+
+	.ticker.user > div {
+		margin: 5px 8px;
 	}
 }

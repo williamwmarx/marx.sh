@@ -38,20 +38,49 @@ h1 {
 
 @media only screen and (max-width: 650px) {
 	h1 {
-		font-size: 11.3vw;
+		font-family: "NYTCheltenham", Times, serif;
+		font-weight: normal;
+		font-size: 8vw;
+		padding-top: 48px;
 		padding-bottom: 0px;
-	}
-
-	h1 span:nth-child(1) {
-		color: black;
-	}
-
-	h1 span:nth-child(2) {
 		color: blue;
 	}
 
+	hr#underline {
+		position: relative;
+		left: 14%;
+		width: 72%;
+		border-top: 1.5px dashed blue;
+		border-bottom: 0px;
+	}
+
 	#desc {
-		width: 98%;
-		padding-bottom: 8px;
+		font-family: "NYTImperial", Times, serif;
+		font-size: 0.9em;
+		margin: 24px 0px 0px 0px;
+		position: relative;
+		left: 10%;
+		width: 80%;
+		padding-bottom: 52px;
+		text-align: justify;
+	}
+
+	header > div {
+		padding-top: 18px;
+	}
+
+	header div.ticker-wrapper {
+		background-color: #fff;
+	}
+
+	header div.ticker {
+		margin: 5px 8px;
+		border-top: 2px solid black;
+		border-bottom: 2px solid black;
+	}
+
+	header hr {
+		margin: 0px;
+		border: 1px solid black;
 	}
 }

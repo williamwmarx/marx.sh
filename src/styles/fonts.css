@@ -52,7 +52,7 @@
 }
 
 @font-face {
-	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-Light.otf") format("woff2"),
+	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-Light.woff2") format("woff2"),
 			 url("../fonts/OfficeCodeProD/OfficeCodeProD-Light.woff") format("woff"),
 			 url("../fonts/OfficeCodeProD/OfficeCodeProD-Light.otf") format("otf");
 	font-family: "OfficeCodeProD";
@@ -61,7 +61,7 @@
 
 @font-face {
 	font-style: italic;
-	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-LightItalic.otf") format("woff2"),
+	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-LightItalic.woff2") format("woff2"),
 			 url("../fonts/OfficeCodeProD/OfficeCodeProD-LightItalic.woff") format("woff"),
 			 url("../fonts/OfficeCodeProD/OfficeCodeProD-LightItalic.otf") format("otf");
 	font-family: "OfficeCodeProD";
@@ -69,7 +69,7 @@
 }
 
 @font-face {
-	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-Medium.otf") format("woff2"),
+	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-Medium.woff2") format("woff2"),
 			 url("../fonts/OfficeCodeProD/OfficeCodeProD-Medium.woff") format("woff"),
 			 url("../fonts/OfficeCodeProD/OfficeCodeProD-Medium.otf") format("otf");
 	font-family: "OfficeCodeProD";
@@ -78,9 +78,25 @@
 
 @font-face {
 	font-style: italic;
-	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-MediumItalic.otf") format("woff2"),
+	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-MediumItalic.woff2") format("woff2"),
 			 url("../fonts/OfficeCodeProD/OfficeCodeProD-MediumItalic.woff") format("woff"),
 			 url("../fonts/OfficeCodeProD/OfficeCodeProD-MediumItalic.otf") format("otf");
 	font-family: "OfficeCodeProD";
 	font-weight: 500;
+}
+
+/* NYT Cheltenham */
+@font-face {
+	src: url("../fonts/NYTCheltenham/NYTCheltenham-Condensed-Medium.woff2") format("woff2"),
+			 url("../fonts/NYTCheltenham/NYTCheltenham-Condensed-Medium.woff") format("woff"),
+			 url("../fonts/NYTCheltenham/NYTCheltenham-Condensed-Medium.otf") format("otf");
+	font-family: "NYTCheltenham";
+}
+
+/* NYT Imperial */
+@font-face {
+	src: url("../fonts/NYTImperial/NYTImperial.woff2") format("woff2"),
+			 url("../fonts/NYTImperial/NYTImperial.woff") format("woff"),
+			 url("../fonts/NYTImperial/NYTImperial.otf") format("otf");
+	font-family: "NYTImperial";
 }
