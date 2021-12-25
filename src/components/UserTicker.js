@@ -17,12 +17,13 @@ class UserTicker extends React.Component {
 			org: null,
 			type: null,
 			weather: null,
+			ua: null,
 			time: `${Date().toString().replace("(", "").replace(")", "")}`.toUpperCase(),
-			ua: `${navigator.userAgent}`.toUpperCase()
 		};
 	}
 
 	componentDidMount() {
+		this.setState({ ua: `${navigator.userAgent}`.toUpperCase() });
 		let url = "https://www.cloudflare.com/cdn-cgi/trace";
 		let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
 		fetch(url)

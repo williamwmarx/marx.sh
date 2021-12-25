@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Header from "../components/header.js"
+import Header from "../components/Header.js"
 import ProjectTicker from "../components/ProjectTicker.js"
 import UserTicker from "../components/UserTicker.js"
 import "../styles/index.css"

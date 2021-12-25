@@ -5,7 +5,7 @@ import "../styles/header.css"
 class Header extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {width: window.innerWidth};
+		this.state = {width: 1000};
 	}
 
 	// Update width state when window is resized
@@ -14,6 +14,7 @@ class Header extends React.Component {
 	}
 
 	componentDidMount() {
+		this.setState({ width: window.innerWidth });
 		window.addEventListener("resize", this.updateWidth);
 	}
 
