@@ -12,7 +12,7 @@
 		"internal": false
 	},
 	"Free Game": {
-		"link": "free-game",
+		"link": "",
 		"internal": true
 	},
 	"Marx on the Gram": {
@@ -36,7 +36,7 @@
 		"internal": false
 	},
 	"WWM Design & Co": {
-		"link": "selected-work",
+		"link": "",
 		"internal": true
 	},
 	"WWM — OSS": {
@@ -44,7 +44,7 @@
 		"internal": false
 	},
 	"William W. Marx Research & Text": {
-		"link": "research",
+		"link": "",
 		"internal": true
 	}
 }

@@ -13,18 +13,24 @@ const ProjectTicker = ({icons}) => {
 			{
 				shuffle(icons).map((icon, i) => (
 					iconMap[icon.node.name].internal ? (
-						<span>
-							<Link to={iconMap[icon.node.name]["link"]}>
-								<img src={icon.node.relativePath} alt={icon.node.name} key={i}/>
-								{/*
-									<GatsbyImage
-										image={icon.node.childImageSharp.gatsbyImageData}
-										alt={icon.node.name}
-										key={i}
-									/>
-								*/}
-							</Link>
-						</span>
+						(iconMap[icon.node.name].link !== "") ? (
+							<span>
+								<Link to={iconMap[icon.node.name].link}>
+									<img src={icon.node.relativePath} alt={icon.node.name} key={i}/>
+									{/*
+										<GatsbyImage
+											image={icon.node.childImageSharp.gatsbyImageData}
+											alt={icon.node.name}
+											key={i}
+										/>
+									*/}
+								</Link>
+							</span>
+						) : (
+							<span>
+								<a><img src={icon.node.relativePath} alt={icon.node.name} key={i}/></a>
+							</span>
+						)
 					) : (
 						<span>
 							<a href={iconMap[icon.node.name].link} target="_blank" rel="noreferrer">
