@@ -1,0 +1,57 @@
+.ticker-wrapper {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.ticker-wrapper hr {
+	margin: 0px;
+	border: 1px solid black;
+}
+
+.ticker {
+	width: 100%;
+	display: flex;
+	white-space: nowrap;
+}
+
+.ticker img {
+	height: 90px;
+}
+
+.ticker > div {
+	margin: 8px 0px;
+}
+
+.ticker > div > span > span > a {
+	margin: 8px 1px;
+	outline: 2px solid black;
+}
+
+.ticker-text {
+	position: relative;
+	font-family: "OfficeCodeProD", monospace;
+	font-weight: bold;
+	font-style: italic;
+	margin: 0px 8px;
+}
+
+.ticker-text .emoji {
+	font-style: normal;
+}
+
+@keyframes marquee {
+	0% { transform: translateX(100%); }
+	100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee2 {
+	0% { transform: translateX(0%); }
+	100% { transform: translateX(-200%); }
+}
+
+@media only screen and (max-width: 650px) {
+	.ticker img {
+		height: 80px;
+	}
+}

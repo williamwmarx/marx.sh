@@ -1,0 +1,57 @@
+header {
+	width: 100vw;
+	background-size: 100vw;
+	background-image: url(../images/Stheno-compressed.jpg);
+}
+
+h1 {
+	font-family: "Wired", Times, serif;
+	font-size: 7.5vw;
+	text-align: center;
+	color: #f00;
+	margin: 0px;
+	padding-bottom: 8px;
+}
+
+#desc {
+	font-family: "OfficeCodeProD", monospace;
+	font-size: 0.8em;
+	width: 70%;
+	margin: 8px 8px 0px 8px;
+}
+
+@media only screen and (max-width: 1300px) {
+	#desc {
+		width: 75%;
+	}
+}
+
+@media only screen and (max-width: 1100px) {
+	h1 {
+		font-size: 8.4vw;
+	}
+
+	#desc {
+		width: 85%;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	h1 {
+		font-size: 11.3vw;
+		padding-bottom: 0px;
+	}
+
+	h1 span:nth-child(1) {
+		color: black;
+	}
+
+	h1 span:nth-child(2) {
+		color: blue;
+	}
+
+	#desc {
+		width: 98%;
+		padding-bottom: 8px;
+	}
+}
