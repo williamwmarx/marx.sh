@@ -20,11 +20,23 @@
 }
 
 .ticker > div {
+	display: flex;
 	margin: 8px 0px;
 }
 
 .ticker > div > span > span > a {
-	margin: 8px 1px;
+	text-decoration: none;
+	display: inline-flex;
+	line-height: 0px
+}
+
+.ticker > div span {
+	display: inline-flex;
+	line-height: 0px;
+}
+
+.ticker > div > span > span > a > img {
+	/* margin: 4px 0px 2px 0px; */
 	outline: 2px solid black;
 }
 

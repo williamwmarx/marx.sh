@@ -57,7 +57,7 @@ class UserTicker extends React.Component {
 					org: obj.hasOwnProperty("organization") ? obj.organization : null,
 				})
 				if (obj.hasOwnProperty("latitude") && obj.hasOwnProperty("longitude")) {
-					this.fetchWeather()
+					this.fetchWeather(obj.latitude, obj.longitude);
 				}
 			})
 		
@@ -139,7 +139,7 @@ class UserTicker extends React.Component {
 					shuffle(userElements).map((obj, i) => (
 						<span>
 							<span className="ticker-text" key={i}>
-								<span className="emoji">{obj.emoji} </span>
+								<span className="emoji">{obj.emoji}&nbsp;</span>
 								<span>{obj.content}</span>
 							</span>
 							<span className="ticker-text">>>></span>
