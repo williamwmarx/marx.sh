@@ -100,3 +100,16 @@
 			 url("../fonts/NYTImperial/NYTImperial.otf") format("otf");
 	font-family: "NYTImperial";
 }
+
+/* Pixelated MS Sans Serif */
+@font-face {
+	src: url("../fonts/PixelatedMSSansSerif/ms_sans_serif.woff2");
+	font-family: "Pixelated MS Sans Serif";
+	font-weight: normal;
+}
+
+@font-face {
+	src: url("../fonts/PixelatedMSSansSerif/ms_sans_serif_bold.woff2");
+	font-family: "Pixelated MS Sans Serif";
+	font-weight: bold;
+}
