@@ -6,6 +6,7 @@ header {
 
 h1 {
 	font-family: "Wired", Times, serif;
+	font-weight: normal;
 	font-size: 7.5vw;
 	text-align: center;
 	color: #f00;
