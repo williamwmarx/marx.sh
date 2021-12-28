@@ -22,51 +22,59 @@ class UserTicker extends React.Component {
 		};
 	}
 
-	componentDidMount() {
-		this.setState({ ua: `${navigator.userAgent}`.toUpperCase() });
-		let url = "https://www.cloudflare.com/cdn-cgi/trace";
-		let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
-		fetch(url)
+	fetchWeather = (latitude, longitude) => {
+		fetch(`https://api.weather.gov/points/${latitude},${longitude}`)
+			.then(res => res.json())
+				.then(obj => {
+					if (obj.hasOwnProperty("properties") && obj.properties.hasOwnProperty("forecast")) {
+						fetch(obj.properties.forecast)
+							.then(res2 => res2.json())
+							.then(obj2 => {
+								let forecast = obj2.properties.periods[0].detailedForecast
+								if (forecast[forecast.length - 1] === ".") {
+									forecast = forecast.slice(0, -1)
+								}
+								this.setState({
+									weather: forecast
+								})
+							})
+					}
+				})
+	}
+
+	fetchLocation = (ipAddress) => {
+		fetch("https://api.ipgeolocation.io/ipgeo?apiKey=733f5090fc794df4a9914e7cd04ac243")
+			.then(res => res.json())
+			.then(obj => {
+				this.setState({
+					city: obj.hasOwnProperty("city") ? obj.city : null,
+					state: obj.hasOwnProperty("state_prov") ? obj.state_prov : null,
+					county: obj.hasOwnProperty("country_code3") ? obj.country_code3 : null,
+					lat: obj.hasOwnProperty("latitude") ? obj.latitude : null,
+					lng: obj.hasOwnProperty("longitude") ? obj.longitude : null,
+					zip: obj.hasOwnProperty("zipcode") ? obj.zipcode : null,
+					type: obj.hasOwnProperty("connection_type") ? obj.connection_type : null,
+					org: obj.hasOwnProperty("organization") ? obj.organization : null,
+				})
+				if (obj.hasOwnProperty("latitude") && obj.hasOwnProperty("longitude")) {
+					this.fetchWeather()
+				}
+			})
+		
+	}
+
+	fetchIP = () => {
+		fetch("https://ipecho.net/plain")
 			.then(res => res.text())
-			.then(text => text.match(ipRegex)[0])
 			.then(ipAddress => {
 				this.setState({ ip: ipAddress });
-				fetch("https://api.ipgeolocation.io/ipgeo?apiKey=733f5090fc794df4a9914e7cd04ac243")
-					.then(res => res.json())
-					.then(obj => {
-						this.setState({
-							city: obj.hasOwnProperty("city") ? obj.city : null,
-							state: obj.hasOwnProperty("state_prov") ? obj.state_prov : null,
-							county: obj.hasOwnProperty("country_code3") ? obj.country_code3 : null,
-							lat: obj.hasOwnProperty("latitude") ? obj.latitude : null,
-							lng: obj.hasOwnProperty("longitude") ? obj.longitude : null,
-							zip: obj.hasOwnProperty("zipcode") ? obj.zipcode : null,
-							type: obj.hasOwnProperty("connection_type") ? obj.connection_type : null,
-							org: obj.hasOwnProperty("organization") ? obj.organization : null,
-						})
-						if (obj.hasOwnProperty("latitude") && obj.hasOwnProperty("longitude")) {
-							fetch(`https://api.weather.gov/points/${obj.latitude},${obj.longitude}`)
-								.then(res => res.json())
-								.then(obj => {
-									if (
-										obj.hasOwnProperty("properties") && obj.properties.hasOwnProperty("forecast")
-									) {
-										fetch(obj.properties.forecast)
-											.then(res2 => res2.json())
-											.then(obj2 => {
-												let forecast = obj2.properties.periods[0].detailedForecast
-												if (forecast[forecast.length - 1] === ".") {
-													forecast = forecast.slice(0, -1)
-												}
-												this.setState({
-													weather: forecast
-												})
-											})
-									}
-								})
-						}
-					})
+				this.fetchLocation(ipAddress)
 			})
+	}
+
+	componentDidMount() {
+		this.setState({ ua: `${navigator.userAgent}`.toUpperCase() });
+		this.fetchIP();
 	}
 
 	render() {
