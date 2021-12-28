@@ -30,13 +30,15 @@ class UserTicker extends React.Component {
 						fetch(obj.properties.forecast)
 							.then(res2 => res2.json())
 							.then(obj2 => {
-								let forecast = obj2.properties.periods[0].detailedForecast
-								if (forecast[forecast.length - 1] === ".") {
-									forecast = forecast.slice(0, -1)
+								if (obj2.properties.hasOwnProperty("periods")) {
+									if (obj2.properties.periods[0].hasOwnProperty("detailedForecast")) {
+										let forecast = obj2.properties.periods[0].detailedForecast
+										if (forecast[forecast.length - 1] === ".") {
+											forecast = forecast.slice(0, -1)
+										}
+										this.setState({ weather: forecast })
+									}
 								}
-								this.setState({
-									weather: forecast
-								})
 							})
 					}
 				})
