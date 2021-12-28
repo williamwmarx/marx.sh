@@ -61,6 +61,16 @@
 	100% { transform: translateX(-200%); }
 }
 
+@-webkit-keyframes marquee {
+	0% { transform: translateX(100%); }
+	100% { transform: translateX(-100%); }
+}
+
+@-webkit-keyframes marquee2 {
+	0% { -webkit-transform: translateX(0%); }
+	100% { -webkit-transform: translateX(-200%); }
+}
+
 @media only screen and (max-width: 650px) {
 	.ticker img {
 		height: 70px;
