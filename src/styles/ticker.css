@@ -79,7 +79,7 @@
 		margin: 0px 0px;
 	}
 
-	.ticker-text {
-		font-size: 0.85em;
+	div > span {
+		font-size: 0.9em !important;
 	}
 }
