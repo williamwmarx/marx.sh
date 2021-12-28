@@ -137,8 +137,8 @@ class UserTicker extends React.Component {
 			<div>
 				{
 					shuffle(userElements).map((obj, i) => (
-						<span>
-							<span className="ticker-text" key={i}>
+						<span key={i}>
+							<span className="ticker-text">
 								<span className="emoji">{obj.emoji}&nbsp;</span>
 								<span>{obj.content}</span>
 							</span>
