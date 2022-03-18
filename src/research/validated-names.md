@@ -1,6 +1,0 @@
----
-title: "Validated Names for Experimental Studies on Race and Ethnicity"
-authornote: "with Charles Crabtree, Jae Yeon Kim, et. al"
-papertype: "working"
----
-A large and fast-growing number of studies across the social sciences use experiments to better understand the role of race in human interactions, particularly in the American context. Researchers often use names to signal the race of individuals portrayed in these experiments. However, those names might also signal other attributes, such as socioeconomic status (e.g., education and income) and citizenship. If they do, researchers need pre-tested names with data on perceptions of these attributes. Such data would permit researchers to draw correct inferences about the causal effect of race in their experiments. In this paper, we provide the largest dataset of validated name perceptions based on three different surveys conducted in the United States. In total, our data include over 44,170 name evaluations from 4,026 respondents for 600 names. In addition to respondent perceptions of race, income, education, and citizenship from names, our data also include respondent characteristics. Our data will be broadly helpful for researchers conducting experiments on the manifold ways in which race shapes American life.

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>𝑾𝑾𝑴</title>
+		<meta name="description" content="Digital life.">
+		<link rel="icon" href="favicon.png"/>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				overflow: hidden;
+				background: #00f;
+			}
+
+			.main {
+				position: relative;
+				height: 100vh;
+			}
+
+			.inner {
+				position: absolute;
+				margin: 0px;
+				margin-left: 50vw;
+				margin-top: 50vh;
+				margin-bottom: 3vh;
+			}
+
+			.inner img {
+				width: 33vw;
+				transform: translate(-50%, -50%);
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<a class="inner" href="">
+				<img src="reachout.png" alt="Those who know don't tell, ask anyway."/>
+			</a>
+		</div>
+		<script>
+			if (window.innerHeight > window.innerWidth) {
+				document.getElementsByTagName("img")[0].style.width = "70vw";
+			}
+		</script>
+	</body>
+</html>
