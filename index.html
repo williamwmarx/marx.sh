@@ -15,7 +15,7 @@
 
 			body {
 				overflow: hidden;
-				background: #000;
+				font-family: serif;
 			}
 
 			.main {
@@ -25,14 +25,7 @@
 
 			.inner {
 				position: absolute;
-				margin: 0px;
-				margin-left: 50vw;
-				margin-top: 50vh;
-				margin-bottom: 3vh;
-			}
-
-			.inner img {
-				width: 33vw;
+				margin: 50vh 0 0 50vw;
 				transform: translate(-50%, -50%);
 			}
 
@@ -40,14 +33,12 @@
 	</head>
 	<body>
 		<div class="main">
-			<a class="inner" href="mailto:something@marx.design">
-				<img src="reachout.png" alt="Those who know don't tell, ask anyway."/>
-			</a>
+			<p class="inner">
+				William W. Marx, 2000–Forever<br/>
+				NOT FOR REDISTRIBUTION<br/>
+				Copyleft 2022, All Wrongs Reserved<br/>
+				<a href="mailto:something@marx.design">something@marx.design</a>
+			</p>
 		</div>
-		<script>
-			if (window.innerHeight > window.innerWidth) {
-				document.getElementsByTagName("img")[0].style.width = "70vw";
-			}
-		</script>
 	</body>
 </html>
