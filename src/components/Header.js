@@ -1,56 +1,40 @@
-import React from "react"
-import UserTicker from "./UserTicker.js"
+import * as React from 'react'
+import { Link } from "gatsby"
 import "../styles/header.css"
+
+function studioTime() {
+	var dateString = new Date().toLocaleString('en-US', {hour12: false, timeZone: 'America/New_York'}).split(" ")[1]
+	return (dateString.length === 8) ? dateString : "0" + dateString
+}
 
 class Header extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {width: 1000};
-	}
-
-	// Update width state when window is resized
-	updateWidth = (e) => {
-		this.setState({ width: window.innerWidth });
+		this.state = {time: studioTime()};
 	}
 
 	componentDidMount() {
-		this.setState({ width: window.innerWidth });
-		window.addEventListener("resize", this.updateWidth);
+		this.timer = setInterval(() => this.setState({time: studioTime()}), 1000);
 	}
 
-	componentWillUnmount() {
-		window.removeEventListener("resize", this.updateWidth);
+	componentWillUnmount(){
+		clearInterval(this.timer);
 	}
 
 	render() {
-		if (this.state.width < 650) {
-			return (
-				<header>
-					<div>
-						<hr/>
-						<UserTicker/>
-						<hr/>
-					</div>
-					<h1>“BETTER ON DESKTOP”</h1>
-					<hr id="underline"/>
-					<p id="desc">{this.props.description}</p>
-				</header>
-			)
-		} else if (this.state.width < 1101) {
-			return (
-				<header>
-					<p id="desc">{this.props.description}</p>
-					<h1>WWM WWM WWM</h1>
-				</header>
-			)
-		} else {
-			return (
-				<header>
-					<p id="desc">{this.props.description}</p>
-					<h1>MARX MARX MARX</h1>
-				</header>
-			)
-		}
+		return (
+			<header>
+				<p>
+					<Link to="/">William W. Marx</Link> is a conceptual bricoleur working between art, design and research.
+				</p>
+				<hr/>
+				<p>
+					(DIGITAL) <Link to="https://instagram.com/williamwmarx">@williamwmarx</Link> —&nbsp;
+					<Link to="mailto:something@marx.design">something@marx.design</Link> |
+					(PHYSICAL) <span className="serif">{this.state.time}</span> <span className="serif">[New York, NY (U.S.A.)]</span>
+				</p>
+			</header>
+		)
 	}
 }
 

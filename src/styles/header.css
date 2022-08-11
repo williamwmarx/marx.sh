@@ -1,88 +1,29 @@
 header {
-	width: 100vw;
-	background-size: 100vw;
-	background-image: url(../images/Stheno-compressed.jpg);
+	position: absolute;
+	bottom: 2em;
+	width: calc(100% - 8em);
 }
 
-h1 {
-	font-family: "Wired", Times, serif;
-	font-weight: normal;
-	font-size: 7.5vw;
-	text-align: center;
-	color: #f00;
-	margin: 0px;
-	padding-bottom: 8px;
+p {
+	font-family: TTContrast;
+	font-size: 1.1em;
+	margin: 0.75em 0 0.75em 0;
 }
 
-#desc {
-	font-family: "OfficeCodeProD", monospace;
-	font-size: 0.8em;
-	width: 70%;
-	margin: 8px 8px 0px 8px;
+a {
+	position: relative;
+	display: inline-block;
+	bottom: 1px;
+	font-family: MaisonNeue;
+	font-size: 0.92em;
+	color: black;
+	text-decoration: none;
 }
 
-@media only screen and (max-width: 1300px) {
-	#desc {
-		width: 75%;
-	}
-}
-
-@media only screen and (max-width: 1100px) {
-	h1 {
-		font-size: 8.4vw;
-	}
-
-	#desc {
-		width: 85%;
-	}
-}
-
-@media only screen and (max-width: 650px) {
-	h1 {
-		font-family: "NYTCheltenham", Times, serif;
-		font-weight: normal;
-		font-size: 8vw;
-		padding-top: 52px;
-		padding-bottom: 0px;
-		color: blue;
-	}
-
-	hr#underline {
-		position: relative;
-		left: 14%;
-		width: 72%;
-		border-top: 1.5px dashed blue;
-		border-bottom: 0px;
-	}
-
-	#desc {
-		font-family: "NYTImperial", Times, serif;
-		font-size: 0.9em;
-		margin: 20px 0px 0px 0px;
-		position: relative;
-		left: 10%;
-		width: 80%;
-		padding-bottom: 52px;
-		text-align: justify;
-	}
-
-	header > div {
-		padding-top: 18px;
-	}
-
-	header div.ticker-wrapper {
-		background-color: #fff;
-	}
-
-	header .ticker {
-		padding: 6px;
-		margin: 4px 8px;
-		border-top: 2px solid black;
-		border-bottom: 2px solid black;
-	}
-
-	header hr {
-		margin: 0px;
-		border: 1px solid black;
-	}
+.serif {
+	position: relative;
+	display: inline-block;
+	bottom: 1px;
+	font-family: MaisonNeue;
+	font-size: 0.92em;
 }

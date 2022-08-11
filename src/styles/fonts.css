@@ -1,115 +1,45 @@
 /* Define local fonts */
 
-/* Eclect Burger by Gregory Page */
+/* Maison Neue */
 @font-face {
-	src: url("../fonts/EclectBurger/Eclect-Burger.woff2") format("woff2"),
-			 url("../fonts/EclectBurger/Eclect-Burger.woff") format("woff"),
-			 url("../fonts/EclectBurger/Eclect-Burger.otf") format("otf");
-	font-family: "EclectBurger";
+	src: url("../fonts/MaisonNeue-Book.woff2") format("woff2"),
+			 url("../fonts/MaisonNeue-Book.woff") format("woff"),
+			 url("../fonts/MaisonNeue-Book.otf") format("otf");
+	font-family: "MaisonNeue";
 }
 
-/* Wired by Nadine Wetzel */
+/* Venus */
 @font-face {
-	src: url("../fonts/Wired/WiredSerif-Regular.woff2") format("woff2"),
-			 url("../fonts/Wired/WiredSerif-Regular.woff") format("woff"),
-			 url("../fonts/Wired/WiredSerif-Regular.otf") format("otf");
-	font-family: "Wired";
+	src: url("../fonts/Venus-Medium.woff2") format("woff2");
+	font-family: "Venus";
 }
 
-/* Office Code Pro D by Nathan Rutzky */
+/* TT Contrast */
 @font-face {
-	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-Regular.woff2") format("woff2"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-Regular.woff") format("woff"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-Regular.otf") format("otf");
-	font-family: "OfficeCodeProD";
+	src: url("../fonts/TTContrast.woff2") format("woff2");
+	font-family: "TTContrast";
+}
+
+@font-face {
+	src: url("../fonts/ms_sans_serif.woff") format("woff");
+	src: url("../fonts/ms_sans_serif.woff2") format("woff2");
 	font-weight: normal;
-}
-
-@font-face {
-	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-RegularItalic.woff2") format("woff2"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-RegularItalic.woff") format("woff"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-RegularItalic.otf") format("otf");
-	font-family: "OfficeCodeProD";
-	font-weight: normal;
-	font-style: italic;
-}
-
-@font-face {
-	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-Bold.woff2") format("woff2"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-Bold.woff") format("woff"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-Bold.otf") format("otf");
-	font-family: "OfficeCodeProD";
-	font-weight: bold;
-}
-
-@font-face {
-	font-style: italic;
-	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-BoldItalic.woff2") format("woff2"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-BoldItalic.woff") format("woff"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-BoldItalic.otf") format("otf");
-	font-family: "OfficeCodeProD";
-	font-weight: bold;
-}
-
-@font-face {
-	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-Light.woff2") format("woff2"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-Light.woff") format("woff"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-Light.otf") format("otf");
-	font-family: "OfficeCodeProD";
-	font-weight: 200;
-}
-
-@font-face {
-	font-style: italic;
-	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-LightItalic.woff2") format("woff2"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-LightItalic.woff") format("woff"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-LightItalic.otf") format("otf");
-	font-family: "OfficeCodeProD";
-	font-weight: 200;
-}
-
-@font-face {
-	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-Medium.woff2") format("woff2"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-Medium.woff") format("woff"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-Medium.otf") format("otf");
-	font-family: "OfficeCodeProD";
-	font-weight: 500;
-}
-
-@font-face {
-	font-style: italic;
-	src: url("../fonts/OfficeCodeProD/OfficeCodeProD-MediumItalic.woff2") format("woff2"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-MediumItalic.woff") format("woff"),
-			 url("../fonts/OfficeCodeProD/OfficeCodeProD-MediumItalic.otf") format("otf");
-	font-family: "OfficeCodeProD";
-	font-weight: 500;
-}
-
-/* NYT Cheltenham */
-@font-face {
-	src: url("../fonts/NYTCheltenham/NYTCheltenham-Condensed-Medium.woff2") format("woff2"),
-			 url("../fonts/NYTCheltenham/NYTCheltenham-Condensed-Medium.woff") format("woff"),
-			 url("../fonts/NYTCheltenham/NYTCheltenham-Condensed-Medium.otf") format("otf");
-	font-family: "NYTCheltenham";
-}
-
-/* NYT Imperial */
-@font-face {
-	src: url("../fonts/NYTImperial/NYTImperial.woff2") format("woff2"),
-			 url("../fonts/NYTImperial/NYTImperial.woff") format("woff"),
-			 url("../fonts/NYTImperial/NYTImperial.otf") format("otf");
-	font-family: "NYTImperial";
-}
-
-/* Pixelated MS Sans Serif */
-@font-face {
-	src: url("../fonts/PixelatedMSSansSerif/ms_sans_serif.woff2");
+	font-style: normal;
 	font-family: "Pixelated MS Sans Serif";
-	font-weight: normal;
 }
 
 @font-face {
-	src: url("../fonts/PixelatedMSSansSerif/ms_sans_serif_bold.woff2");
-	font-family: "Pixelated MS Sans Serif";
+	src: url("../fonts/ms_sans_serif_bold.woff") format("woff");
+	src: url("../fonts/ms_sans_serif_bold.woff2") format("woff2");
 	font-weight: bold;
+	font-style: normal;
+	font-family: "Pixelated MS Sans Serif";
+}
+
+/* Tapeworm */
+@font-face {
+	src: url("../fonts/Tapeworm.woff2") format("woff2"),
+			 url("../fonts/Tapeworm.woff") format("woff"),
+			 url("../fonts/Tapeworm.otf") format("otf");
+	font-family: "Tapeworm";
 }
