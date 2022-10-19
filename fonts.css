@@ -1,0 +1,40 @@
+/* Define local fonts */
+
+/* Maison Neue */
+@font-face {
+	src: url("./fonts/MaisonNeue-Book.woff2") format("woff2"),
+			 url("./fonts/MaisonNeue-Book.woff") format("woff"),
+			 url("./fonts/MaisonNeue-Book.otf") format("otf");
+	font-family: "MaisonNeue";
+}
+
+/* TT Contrast */
+@font-face {
+	src: url("./fonts/TTContrast.woff2") format("woff2");
+	font-family: "TTContrast";
+}
+
+/* Windows 98 MS Sans Serif */
+@font-face {
+	src: url("./fonts/ms_sans_serif.woff") format("woff");
+	src: url("./fonts/ms_sans_serif.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-family: "Pixelated MS Sans Serif";
+}
+
+@font-face {
+	src: url("./fonts/ms_sans_serif_bold.woff") format("woff");
+	src: url("./fonts/ms_sans_serif_bold.woff2") format("woff2");
+	font-weight: bold;
+	font-style: normal;
+	font-family: "Pixelated MS Sans Serif";
+}
+
+/* Tapeworm */
+@font-face {
+	src: url("./fonts/Tapeworm.woff2") format("woff2"),
+			 url("./fonts/Tapeworm.woff") format("woff"),
+			 url("./fonts/Tapeworm.otf") format("otf");
+	font-family: "Tapeworm";
+}

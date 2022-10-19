@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<script type="text/javascript">
+			function maximizeit() {
+				console.log("MAXIMIZED");
+			}
+
+			function minimizeit() {
+				console.log("MINIMIZED");
+			}
+
+			function closeit() {
+				console.log("CLOSED");
+			}
+		</script>
+		<style media="screen">
+			@import url("fonts.css");
+
+			* {
+				margin: 0;
+				padding: 0;
+				border: none;
+				box-sizing: border-box;
+				-webkit-tap-highlight-color: transparent;
+			}
+
+			html, body {
+				height: 100%;
+			}
+
+			body {
+				font-family: "MaisonNeue", sans-serif !important;
+			}
+
+			#dragable {
+				position: absolute;
+				z-index: 9;
+				box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.2);
+				box-shadow 0.2s;
+			}
+
+			#dragable.drag {
+				box-shadow: 3px 6px 24px rgba(0, 0, 0, 0.5);
+			}
+
+			#dragable #dragzone {
+				width: 100%;
+				height: 100%;
+				cursor: move;
+				z-index: 10;
+			}
+
+			.wrapper{
+				position: relative;
+				display: flex;
+			}
+
+			.window {
+				position: absolute;
+				font-family: "Pixelated MS Sans Serif";
+				font-size: 11px;
+				box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px #808080, inset 2px 2px #fff;
+				background: #c0c0c0;
+				padding: 3px;
+			}
+
+			.window-body img{
+				width: 30em;
+			}
+
+			.title-bar {
+				background: linear-gradient(90deg, #000080, #1084d0);
+				padding: 3px 2px 3px 3px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.title-bar-text {
+				font-weight: bold;
+				color: white;
+				letter-spacing: 0;
+				margin-right: 24px;
+			}
+
+			.title-bar-controls {
+				display: flex;
+			}
+
+			.title-bar-controls button {
+				padding: 0;
+				display: block;
+				min-width: 16px;
+				min-height: 14px;
+				background: #c0c0c0;
+				box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+			}
+
+			.title-bar-controls button:active {
+				padding: 0;
+				box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+			}
+
+			.title-bar-controls button:focus {
+				outline: none;
+			}
+
+			.title-bar-controls button[aria-label="Minimize"] {
+				background-image: url("icons/minimize.svg");
+				background-repeat: no-repeat;
+				background-position: bottom 3px left 5px;
+			}
+
+			.title-bar-controls button[aria-label="Maximize"] {
+				margin-left: 2px;
+				background-image: url("icons/maximize.svg");
+				background-repeat: no-repeat;
+				background-position: top 2px left 3px;
+			}
+
+			.title-bar-controls button[aria-label="Close"] {
+				margin-left: 2px;
+				background-image: url("icons/close.svg");
+				background-repeat: no-repeat;
+				background-position: top 3px left 4px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			William W. Marx is a conceptual bricoleur.
+		</header>
+
+		<div id="dragable">
+			<div id="dragzone">
+				<div class="wrapper">
+					<div class="window">
+						<div class="title-bar">
+							<div class="title-bar-text">“Curated Vacancy” Art Store</div>
+							<div class="title-bar-controls">
+								<button aria-label="Minimize" onclick="minimizeit()"/>
+								<button aria-label="Maximize" onclick="maximizeit()"/>
+								<button aria-label="Close" onclick="closeit()"/>
+							</div>
+						</div>
+						<div class="window-body">
+							<a href="https://marx.design">
+								<img src="curated_vacancy.jpg" alt="“Curated Vacancy” Art Store"/>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			const dragElement = (element, dragzone) => {
+				let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+				const dragMouseUp = () => {
+					document.onmouseup = null;
+					document.onmousemove = null;
+					element.classList.remove("drag");
+				};
+
+				const dragMouseMove = (event) => {
+					event.preventDefault();
+					pos1 = pos3 - event.clientX;
+					pos2 = pos4 - event.clientY;
+					pos3 = event.clientX;
+					pos4 = event.clientY;
+					element.style.top = `${element.offsetTop - pos2}px`;
+					element.style.left = `${element.offsetLeft - pos1}px`;
+				};
+
+				const dragMouseDown = (event) => {
+					event.preventDefault();
+					pos3 = event.clientX;
+					pos4 = event.clientY;
+					element.classList.add("drag");
+					document.onmouseup = dragMouseUp;
+					document.onmousemove = dragMouseMove;
+				};
+
+				dragzone.onmousedown = dragMouseDown;
+			};
+
+			const dragable = document.getElementById("dragable"),
+						dragzone = document.getElementById("dragzone");
+			dragElement(dragable, dragzone);
+
+		</script>
+	</body>
+</html>
