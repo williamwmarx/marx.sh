@@ -1,8 +1,12 @@
+/* MOBILE */
+/* Toggle menu on mobile site */
 function toggleMobileMenu() {
 	let menu = document.getElementById("menu");
 	(menu.style.display === "block") ? menu.style.display = "none" : menu.style.display = "block";
 }
 
+/* DESKTOP */
+/* Ticking clock */
 function getStudioTime() {
 	var dateString = new Date().toLocaleString('en-US', {hour12: false, timeZone: 'America/New_York'}).split(" ")[1]
 	let timeSpan = document.getElementById("time");
@@ -12,6 +16,7 @@ function getStudioTime() {
 getStudioTime();
 setInterval(getStudioTime, 1000);
 
+/* Dragable store window */
 const dragElement = (element, dragzone) => {
 	let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 

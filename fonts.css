@@ -16,14 +16,6 @@
 
 /* Windows 98 MS Sans Serif */
 @font-face {
-	src: url("./fonts/ms_sans_serif.woff") format("woff");
-	src: url("./fonts/ms_sans_serif.woff2") format("woff2");
-	font-weight: normal;
-	font-style: normal;
-	font-family: "Pixelated MS Sans Serif";
-}
-
-@font-face {
 	src: url("./fonts/ms_sans_serif_bold.woff") format("woff");
 	src: url("./fonts/ms_sans_serif_bold.woff2") format("woff2");
 	font-weight: bold;

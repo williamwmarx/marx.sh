@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>William W. Marx & Co.</title>
+		<link rel="icon" type="image/x-icon" href="icons/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="main.css"/>
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -12,12 +13,14 @@
 		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-5RZ9CWZ');</script>
-		<!-- End Google Tag Manager -->
+		<!-- Manage Art Store window button functions -->
 		<script type="text/javascript" src="buttons.js"></script>
 	</head>
 
 	<body>
+		<!-- Desktop view (>1000px wide) -->
 		<section id="desktop">
+			<!-- Header (displayed at bottom of page) -->
 			<header>
 				<p>
 					<a href="/">William W. Marx</a> is a conceptual bricoleur working between art, design and research.
@@ -26,19 +29,20 @@
 				<p>
 					(DIGITAL) <a href="https://instagram.com/williamwmarx">@williamwmarx</a> —
 					<a href="mailto:something@marx.design">something@marx.design</a> |
-					(PHYSICAL) <span id="time" class="serif">00:00:00</span> <span class="serif">[New York, NY (U.S.A.)]</span>
+					(PHYSICAL) <span id="time" class="sans">00:00:00</span> <span class="sans">[New York, NY (U.S.A.)]</span>
 				</p>
 			</header>
 
+			<!-- Art Store window -->
 			<div id="dragable">
 				<div id="dragzone">
 					<div class="window">
 						<div class="title-bar">
 							<span>“Curated Vacancy” Art Store</span>
 							<aside>
-								<button aria-label="Minimize" onclick="minimizeIt()"/>
-								<button aria-label="Maximize" onclick="maximizeIt()"/>
-								<button aria-label="Close" onclick="closeIt()"/>
+								<button aria-label="Minimize" onclick="showOverlay('BUY NOW CRY LATER')"/>
+								<button aria-label="Maximize" onclick="showOverlay('DO NOT MINIMIZE THE ROLE OF COMMERCE')"/>
+								<button aria-label="Close" onclick="showOverlay('NICE TRY BUCKO')"/>
 							</aside>
 						</div>
 						<a href="https://gallery.marx.design">
@@ -52,10 +56,13 @@
 				</div>
 			</div>
 
+			<!-- Overlay to display if triggered -->
 			<div id="overlay"></div>
 		</section>
 
+		<!-- Mobile view (<1000px wide) -->
 		<section id="mobile">
+			<!-- Button to toggle list of links -->
 			<button onclick="toggleMobileMenu()">
 				William W. Marx
 				<picture>
@@ -64,6 +71,8 @@
 					<img src="icons/magnify.png" alt="Magnifying Glass">
 				</picture>
 			</button>
+
+			<!-- List of links -->
 			<nav id="menu">
 				<a href="https://gallery.marx.design">
 					<picture>
@@ -108,10 +117,10 @@
 			</nav>
 		</section>
 
+		<!-- Main JS functions -->
 		<script type="text/javascript" src="main.js"></script>
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RZ9CWZ"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
 	</body>
 </html>
