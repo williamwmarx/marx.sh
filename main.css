@@ -26,6 +26,72 @@ body {
 	font-family: var(--sans); 
 }
 
+#desktop {
+	visibility: visible;
+}
+
+#mobile {
+	visibility: hidden;
+	margin: 1em;
+	display: block;
+	overflow: hidden;
+}
+
+#mobile button {
+	font-family: "Fodor";
+	color: black;
+	letter-spacing: 1px;
+	width: 100%;
+	/* padding: calc(10px + 0.15em) 10px 10px calc(10px + 0.35em); */
+	padding: 10px 0px 10px 0.65em;
+	text-align: left;
+	font-size: 2em;
+	border-radius: 2em;
+	background: #f8f8f8;
+	box-shadow: inset 0.15em 0.15em 0.2em #ccc, inset -0.15em -0.15em 0.15em #eee;
+}
+
+#mobile button > img {
+	position: absolute;
+	right: 1em;
+	height: 0.85em;
+}
+
+nav {
+	display: none;
+	position: relative;
+	margin-top: 0.25em;
+	z-index: 1;
+	background: #f8f8f8;
+	box-shadow: inset 0.15em 0.15em 0.2em #ccc, inset -0.15em -0.15em 0.15em #eee;
+	font-size: 2em;
+	border-radius: 1em;
+	padding: 0.25em 0.2em;
+	width: 100%;
+}
+
+nav a {
+	font-family: "Fodor";
+	letter-spacing: 1px;
+	display: block;
+	border-radius: 2em;
+	padding: 0.25em 0em 0.25em 0.6em;
+}
+
+nav a > span {
+	font-family: "TerminalGrotesque";
+	margin: 0px 1px;
+}
+
+nav a:hover {
+	background: linear-gradient(35deg, #ffffff, #fafafa);
+	box-shadow: inset 0.15em 0.15em 0.2em #ccc, inset -0.15em -0.15em 0.15em #eee;
+}
+
+#mobile:hover nav {
+	display: block;
+}
+
 #dragable {
 	position: absolute;
 	display: flex;
@@ -57,7 +123,7 @@ body {
 }
 
 .window img {
-	width: 30em;
+	width: 450px;
 }
 
 .title-bar {
@@ -122,8 +188,9 @@ body {
 
 header {
 	position: absolute;
-	bottom: 2em;
-	width: calc(100% - 8em);
+	bottom: 0px;
+	width: 100%; 
+	padding: 1em 8em 1em 2em;
 }
 
 p {
@@ -142,10 +209,24 @@ a {
 	text-decoration: none;
 }
 
+hr {
+	border-top: 1px solid black;
+}
+
 .serif {
 	position: relative;
 	display: inline-block;
 	bottom: 1px;
 	font-family: var(--sans);
 	font-size: 0.92em;
+}
+
+@media only screen and (max-width: 1000px) {
+	#mobile {
+		visibility: visible;
+	}
+
+	#desktop {
+		visibility: hidden;
+	}
 }

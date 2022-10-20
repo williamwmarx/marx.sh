@@ -1,3 +1,12 @@
+function getStudioTime() {
+	var dateString = new Date().toLocaleString('en-US', {hour12: false, timeZone: 'America/New_York'}).split(" ")[1]
+	let timeSpan = document.getElementById("time");
+	timeSpan.innerHTML = (dateString.length === 8) ? dateString : "0" + dateString;
+}
+
+getStudioTime();
+setInterval(getStudioTime, 1000);
+
 const dragElement = (element, dragzone) => {
 	let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
@@ -29,4 +38,11 @@ const dragElement = (element, dragzone) => {
 	dragzone.onmousedown = dragMouseDown;
 };
 
-dragElement(document.getElementById("dragable"), document.getElementById("dragzone"));
+let dragable = document.getElementById("dragable"), dragzone = document.getElementById("dragzone");
+let windowSize = dragable.getElementsByClassName("window")[0].getBoundingClientRect()
+let headerHeight = document.getElementsByTagName("header")[0].getBoundingClientRect().height;
+availableHeight = window.innerHeight - windowSize.height - headerHeight;
+availableWidth = window.innerWidth - windowSize.width;
+dragable.style.top = `${Math.floor(Math.random() * availableHeight)}px`;
+dragable.style.left = `${Math.floor(Math.random() * availableWidth)}px`;
+dragElement(dragable, dragzone);

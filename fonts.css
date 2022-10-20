@@ -38,3 +38,19 @@
 			 url("./fonts/Tapeworm.otf") format("otf");
 	font-family: "Tapeworm";
 }
+
+/* Terminal Grotesque */
+@font-face {
+	src: url("./fonts/terminal-grotesque.woff2") format("woff2"),
+			 url("./fonts/terminal-grotesque.woff") format("woff"),
+			 url("./fonts/terminal-grotesque.otf") format("otf");
+	font-family: "TerminalGrotesque";
+}
+
+/* Fodor */
+@font-face {
+	src: url("./fonts/Fodor Regular.woff2") format("woff2"),
+			 url("./fonts/Fodor Regular.woff") format("woff"),
+			 url("./fonts/Fodor Regular.otf") format("otf");
+	font-family: "Fodor";
+}

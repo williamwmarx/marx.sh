@@ -10,31 +10,52 @@
 	</head>
 
 	<body>
-		<header>
-			William W. Marx is a conceptual bricoleur.
-		</header>
+		<section id="desktop">
+			<header>
+				<p>
+					<a href="/">William W. Marx</a> is a conceptual bricoleur working between art, design and research.
+				</p>
+				<hr/>
+				<p>
+					(DIGITAL) <a href="https://instagram.com/williamwmarx">@williamwmarx</a> —
+					<a href="mailto:something@marx.design">something@marx.design</a> |
+					(PHYSICAL) <span id="time" class="serif">00:00:00</span> <span class="serif">[New York, NY (U.S.A.)]</span>
+				</p>
+			</header>
 
-		<div id="dragable">
-			<div id="dragzone">
-				<div class="window">
-					<div class="title-bar">
-						<span>“Curated Vacancy” Art Store</span>
-						<aside>
-							<button aria-label="Minimize" onclick="minimizeit()"/>
-							<button aria-label="Maximize" onclick="maximizeit()"/>
-							<button aria-label="Close" onclick="closeit()"/>
-						</aside>
+			<div id="dragable">
+				<div id="dragzone">
+					<div class="window">
+						<div class="title-bar">
+							<span>“Curated Vacancy” Art Store</span>
+							<aside>
+								<button aria-label="Minimize" onclick="minimizeit()"/>
+								<button aria-label="Maximize" onclick="maximizeit()"/>
+								<button aria-label="Close" onclick="closeit()"/>
+							</aside>
+						</div>
+						<a href="https://marx.design">
+							<picture>
+								<source srcset="images/curated_vacancy.avif" type="image/avif"/>
+								<source srcset="images/curated_vacancy.webp" type="image/webp"/>
+								<img src="images/curated_vacancy.jpg" alt="“Curated Vacancy” Art Store">
+							</picture>
+						</a>
 					</div>
-					<a href="https://marx.design">
-						<picture>
-							<source srcset="images/curated_vacancy.avif" type="image/avif"/>
-							<source srcset="images/curated_vacancy.webp" type="image/webp"/>
-							<img src="images/curated_vacancy.jpg" alt="“Curated Vacancy” Art Store">
-						</picture>
-					</a>
 				</div>
 			</div>
-		</div>
+		</section>
+
+		<section id="mobile">
+			<button>William W. Marx <img src="icons/magnify.png"></button>
+			<nav>
+				<a href="https://gallery.marx.design">💸 <span>#</span>ART STORE<span>#</span></a>
+				<a href="https://atemp.studio">🪞 <span>#</span>A-TEMP<span>#</span></a>
+				<a href="aboutme.txt">🧑‍🚀 <span>#</span>ABOUTME.TXT<span>#</span></a>
+				<a href="https://instagram.com/williamwmarx">🕯 <span>#</span>INSTAGRAM<span>#</span></a>
+				<a href="mailto:something@marx.design">📮 <span>#</span>AEROGRAM<span>#</span></a>
+			</nav>
+		</section>
 
 		<script type="text/javascript" src="main.js"></script>
 	</body>
