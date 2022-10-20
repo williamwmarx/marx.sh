@@ -1,3 +1,8 @@
+function toggleMobileMenu() {
+	let menu = document.getElementById("menu");
+	(menu.style.display === "block") ? menu.style.display = "none" : menu.style.display = "block";
+}
+
 function getStudioTime() {
 	var dateString = new Date().toLocaleString('en-US', {hour12: false, timeZone: 'America/New_York'}).split(" ")[1]
 	let timeSpan = document.getElementById("time");

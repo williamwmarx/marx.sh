@@ -5,8 +5,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>William W. Marx & Co.</title>
-		<script type="text/javascript" src="buttons.js"></script>
 		<link rel="stylesheet" type="text/css" href="main.css"/>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-5RZ9CWZ');</script>
+		<!-- End Google Tag Manager -->
+		<script type="text/javascript" src="buttons.js"></script>
 	</head>
 
 	<body>
@@ -29,12 +36,12 @@
 						<div class="title-bar">
 							<span>“Curated Vacancy” Art Store</span>
 							<aside>
-								<button aria-label="Minimize" onclick="minimizeit()"/>
-								<button aria-label="Maximize" onclick="maximizeit()"/>
-								<button aria-label="Close" onclick="closeit()"/>
+								<button aria-label="Minimize" onclick="minimizeIt()"/>
+								<button aria-label="Maximize" onclick="maximizeIt()"/>
+								<button aria-label="Close" onclick="closeIt()"/>
 							</aside>
 						</div>
-						<a href="https://marx.design">
+						<a href="https://gallery.marx.design">
 							<picture>
 								<source srcset="images/curated_vacancy.avif" type="image/avif"/>
 								<source srcset="images/curated_vacancy.webp" type="image/webp"/>
@@ -44,19 +51,67 @@
 					</div>
 				</div>
 			</div>
+
+			<div id="overlay"></div>
 		</section>
 
 		<section id="mobile">
-			<button>William W. Marx <img src="icons/magnify.png"></button>
-			<nav>
-				<a href="https://gallery.marx.design">💸 <span>#</span>ART STORE<span>#</span></a>
-				<a href="https://atemp.studio">🪞 <span>#</span>A-TEMP<span>#</span></a>
-				<a href="aboutme.txt">🧑‍🚀 <span>#</span>ABOUTME.TXT<span>#</span></a>
-				<a href="https://instagram.com/williamwmarx">🕯 <span>#</span>INSTAGRAM<span>#</span></a>
-				<a href="mailto:something@marx.design">📮 <span>#</span>AEROGRAM<span>#</span></a>
+			<button onclick="toggleMobileMenu()">
+				William W. Marx
+				<picture>
+					<source srcset="icons/magnify.avif" type="image/avif"/>
+					<source srcset="icons/magnify.webp" type="image/webp"/>
+					<img src="icons/magnify.png" alt="Magnifying Glass">
+				</picture>
+			</button>
+			<nav id="menu">
+				<a href="https://gallery.marx.design">
+					<picture>
+						<source srcset="icons/wingedcash.avif" type="image/avif"/>
+						<source srcset="icons/wingedcash.webp" type="image/webp"/>
+						<img src="icons/wingedcash.png" alt="Money with Wings Emoji">
+					</picture>
+					<span>#</span>ART STORE<span>#</span>
+				</a>
+				<a href="https://atemp.studio">
+					<picture>
+						<source srcset="icons/mirror.avif" type="image/avif"/>
+						<source srcset="icons/mirror.webp" type="image/webp"/>
+						<img src="icons/mirror.png" alt="Mirror Emoji">
+					</picture>
+					<span>#</span>A-TEMP<span>#</span>
+				</a>
+				<a href="aboutme.txt">
+					<picture>
+						<source srcset="icons/astronaut.avif" type="image/avif"/>
+						<source srcset="icons/astronaut.webp" type="image/webp"/>
+						<img src="icons/astronaut.png" alt="Astronaut Emoji">
+					</picture>
+					<span>#</span>ABOUTME.TXT<span>#</span>
+				</a>
+				<a href="https://instagram.com/williamwmarx">
+					<picture>
+						<source srcset="icons/candle.avif" type="image/avif"/>
+						<source srcset="icons/candle.webp" type="image/webp"/>
+						<img src="icons/candle.png" alt="Candle Emoji">
+					</picture>
+					<span>#</span>INSTAGRAM<span>#</span>
+				</a>
+				<a href="mailto:something@marx.design">
+					<picture>
+						<source srcset="icons/postbox.avif" type="image/avif"/>
+						<source srcset="icons/postbox.webp" type="image/webp"/>
+						<img src="icons/postbox.png" alt="Postbox Emoji">
+					</picture>
+					<span>#</span>AEROGRAM<span>#</span>
+				</a>
 			</nav>
 		</section>
 
 		<script type="text/javascript" src="main.js"></script>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RZ9CWZ"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
 	</body>
 </html>
