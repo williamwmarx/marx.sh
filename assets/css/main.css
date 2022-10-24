@@ -176,19 +176,19 @@ nav a:hover {
 }
 
 .title-bar aside button[aria-label="Minimize"] {
-	background-image: url("icons/minimize.svg");
+	background-image: url("../icons/minimize.svg");
 	background-repeat: no-repeat;
 	background-position: bottom 4px center;
 }
 
 .title-bar aside button[aria-label="Maximize"] {
-	background-image: url("icons/maximize.svg");
+	background-image: url("../icons/maximize.svg");
 	background-repeat: no-repeat;
 	background-position: top 2px center;
 }
 
 .title-bar aside button[aria-label="Close"] {
-	background-image: url("icons/close.svg");
+	background-image: url("../icons/close.svg");
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -220,7 +220,7 @@ hr {
 	border-top: 1px solid black;
 }
 
-.serif {
+.sans {
 	position: relative;
 	display: inline-block;
 	bottom: 1px;
