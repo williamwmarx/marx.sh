@@ -195,10 +195,6 @@ body {
 	color: #777;
 }
 
-.simple {
-	visibility: hidden;
-}
-
 .simple a {
 	color: #777;
 }
@@ -217,7 +213,10 @@ body {
 }
 
 @media only screen and (max-width: 1000px) {
-	#galllery-promo {
+	#gallery-promo {
 		visibility: hidden;
+	}
+	.simple {
+		visibility: visible;
 	}
 }
