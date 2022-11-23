@@ -10,14 +10,6 @@
 	--sans: MaisonNeue, Helvetica, sans-serif;
 }
 
-* {
-	margin: 0;
-	padding: 0;
-	border: none;
-	box-sizing: border-box;
-	-webkit-tap-highlight-color: transparent;
-}
-
 html, body {
 	height: 100%;
 }
@@ -26,94 +18,33 @@ body {
 	font-family: var(--sans); 
 }
 
-#desktop {
+#gallery-promo {
 	visibility: visible;
 }
 
-#mobile {
-	visibility: hidden;
-	padding: 1em;
-	display: block;
-	overflow: hidden;
+#gallery-promo * {
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
 }
 
-#mobile button {
-	font-family: "Fodor";
-	color: black;
-	letter-spacing: 1px;
-	width: 100%;
-	padding: 10px 0px 10px 0.65em;
-	text-align: left;
-	font-size: 2em;
-	border-radius: 2em;
-	background: linear-gradient(35deg, #ffffff, #fafafa);
-	box-shadow: 0.15em 0.15em 0.2em #ccc, -0.15em -0.15em 0.15em #eee;
-}
-
-#mobile button:hover {
-	cursor: pointer;
-}
-
-#mobile button img {
-	position: absolute;
-	right: 1em;
-	height: 0.85em;
-}
-
-nav {
-	position: relative;
-	margin-top: 0.5em;
-	z-index: 1;
-	background: #f8f8f8;
-	box-shadow: inset 0.15em 0.15em 0.2em #ccc, inset -0.15em -0.15em 0.15em #eee;
-	font-size: 2em;
-	border-radius: 1em;
-	padding: 0.35em 0.2em;
-	width: 100%;
-}
-
-#menu {
-	display: none;
-}
-
-nav a {
-	font-family: "Fodor";
-	letter-spacing: 1px;
-	display: block;
-	border-radius: 2em;
-	padding: 0.25em 0em 0.25em 0.6em;
-}
-
-nav a img {
-	height: 1em;
-	padding: 0.2em 0.1em 0em 0.1em;
-}
-
-nav a > span {
-	font-family: "TerminalGrotesque";
-	margin: 0px 1px;
-}
-
-nav a:hover {
-	background: linear-gradient(35deg, #ffffff, #fafafa);
-	box-shadow: 0.15em 0.15em 0.2em #ccc, -0.15em -0.15em 0.15em #eee;
-}
-
-#dragable {
+#gallery-promo #dragable {
 	position: absolute;
 	display: flex;
 	z-index: 9;
 }
-
-#dragable #dragzone {
+#gallery-promo #dragable #dragzone {
 	width: 100%;
 	height: 100%;
 	z-index: 10;
 }
 
-.window {
+#gallery-promo .window {
 	position: absolute;
 	font-family: "Pixelated MS Sans Serif";
+	font-weight: bold;
 	font-size: 11px;
 	box-shadow: var(--raised-shadow), var(--slight-shadow);
 	transition: box-shadow 0.2s;
@@ -121,19 +52,19 @@ nav a:hover {
 	padding: 3px 3px 1px 3px;
 }
 
-.window.drag {
+#gallery-promo .window.drag {
 	box-shadow: var(--raised-shadow), var(--slight-shadow-hover);
 }
 
-.window a {
+#gallery-promo .window a {
 	cursor: pointer;
 }
 
-.window img {
+#gallery-promo .window img {
 	width: 450px;
 }
 
-.title-bar {
+#gallery-promo .title-bar {
 	cursor: grab;
 	background: var(--windows98-gradient);
 	padding: 3px 2px 3px 3px;
@@ -142,22 +73,22 @@ nav a:hover {
 	align-items: center;
 }
 
-.window.drag .title-bar {
+#gallery-promo .window.drag .title-bar {
 	cursor: grabbing;
 }
 
-.title-bar span {
+#gallery-promo .title-bar span {
 	font-weight: bold;
 	color: white;
 	letter-spacing: 0;
 	margin: 0px 24px 0px 2px;
 }
 
-.title-bar aside {
+#gallery-promo .title-bar aside {
 	display: flex;
 }
 
-.title-bar aside button {
+#gallery-promo .title-bar aside button {
 	margin-left: 2px;
 	padding: 0;
 	display: block;
@@ -167,46 +98,46 @@ nav a:hover {
 	box-shadow: var(--raised-shadow);
 }
 
-.title-bar aside button:active {
+#gallery-promo .title-bar aside button:active {
 	box-shadow: var(--sunken-shadow);
 }
 
-.title-bar aside button:focus {
+#gallery-promo .title-bar aside button:focus {
 	outline: none;
 }
 
-.title-bar aside button[aria-label="Minimize"] {
+#gallery-promo .title-bar aside button[aria-label="Minimize"] {
 	background-image: url("../icons/minimize.svg");
 	background-repeat: no-repeat;
 	background-position: bottom 4px center;
 }
 
-.title-bar aside button[aria-label="Maximize"] {
+#gallery-promo .title-bar aside button[aria-label="Maximize"] {
 	background-image: url("../icons/maximize.svg");
 	background-repeat: no-repeat;
 	background-position: top 2px center;
 }
 
-.title-bar aside button[aria-label="Close"] {
+#gallery-promo .title-bar aside button[aria-label="Close"] {
 	background-image: url("../icons/close.svg");
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-header {
+#gallery-promo header {
 	position: absolute;
 	bottom: 0px;
 	width: 100%; 
 	padding: 1em 8em 1em 2em;
 }
 
-p {
+#gallery-promo p {
 	font-family: TTContrast;
 	font-size: 1.1em;
 	margin: 0.75em 0 0.75em 0;
 }
 
-a {
+#gallery-promo a {
 	position: relative;
 	display: inline-block;
 	bottom: 1px;
@@ -216,11 +147,11 @@ a {
 	text-decoration: none;
 }
 
-hr {
+#gallery-promo hr {
 	border-top: 1px solid black;
 }
 
-.sans {
+#gallery-promo .sans {
 	position: relative;
 	display: inline-block;
 	bottom: 1px;
@@ -228,7 +159,7 @@ hr {
 	font-size: 0.92em;
 }
 
-#overlay {
+#gallery-promo #overlay {
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
@@ -241,12 +172,52 @@ hr {
 	font-size: 4vw;
 }
 
-@media only screen and (max-width: 1000px) {
-	#mobile {
-		visibility: visible;
-	}
+#gallery-promo button[aria-label="Toggle Site View"] {
+	padding: 3.75em 3.25em;
+	background-color: #fff ;
+}
 
-	#desktop {
+#gallery-promo button[aria-label="Toggle Site View"] > span {
+	display: block;
+	font-family: "Pixelated MS Sans Serif";
+	font-size: 0.9em;
+}
+
+.simple {
+	position: relative;
+	left: 10vw;
+	top: 10vh;
+	max-width: 75ch;
+	font-family: SFMono;
+	font-weight: medium;
+	font-size: 0.85em;
+	line-height: 1.25;
+	color: #777;
+}
+
+.simple {
+	visibility: hidden;
+}
+
+.simple a {
+	color: #777;
+}
+
+.simple .divider {
+	padding: 0.2em 0em;
+}
+
+.simple .home {
+	padding-top: 1.5em;
+}
+
+.simple .home a {
+	font-style: oblique;
+	text-decoration: none;
+}
+
+@media only screen and (max-width: 1000px) {
+	#galllery-promo {
 		visibility: hidden;
 	}
 }

@@ -1,11 +1,4 @@
-/* MOBILE */
-/* Toggle menu on mobile site */
-function toggleMobileMenu() {
-	let menu = document.getElementById("menu");
-	(menu.style.display === "block") ? menu.style.display = "none" : menu.style.display = "block";
-}
-
-/* DESKTOP */
+/* Gallery Promo */
 /* Ticking clock */
 function getStudioTime() {
 	var dateString = new Date().toLocaleString('en-US', {hour12: false, timeZone: 'America/New_York'}).split(" ")[1]
@@ -53,6 +46,12 @@ let windowSize = dragable.getElementsByClassName("window")[0].getBoundingClientR
 let headerHeight = document.getElementsByTagName("header")[0].getBoundingClientRect().height;
 availableHeight = window.innerHeight - windowSize.height - headerHeight;
 availableWidth = window.innerWidth - windowSize.width;
-dragable.style.top = `${Math.floor(Math.random() * availableHeight)}px`;
-dragable.style.left = `${Math.floor(Math.random() * availableWidth)}px`;
+dragable.style.top = `${Math.floor((0.05 * availableHeight) + (0.3 * Math.random() * availableHeight))}px`;
+dragable.style.left = `${Math.floor((0.65 * availableWidth) + (0.3 * Math.random() * availableWidth))}px`;
 dragElement(dragable, dragzone);
+
+/* OTHER */
+function toggleSiteView() {
+	document.getElementById("gallery-promo").style.visibility = "hidden";
+	document.getElementsByClassName("simple")[0].style.visibility = "visible";
+}
