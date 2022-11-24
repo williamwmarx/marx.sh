@@ -1,31 +1,24 @@
 @use "helpers";
 @use "simple";
 @use "windows98";
+
 /* Maison Neue */
 @include helpers.define_font("MaisonNeue-Book", "MaisonNeue");
+$sans: "MaisonNeue", "Helvetica", "Arial", sans-serif;
 
 /* TT Contrast */
 @include helpers.define_font("TTContrast", "TTContrast");
 
-/* Windows 98 MS Sans Serif */
-@include helpers.define_font("ms_sans_serif", "Pixelated MS Sans Serif");
-@include helpers.define_font("ms_sans_serif_bold", "Pixelated MS Sans Serif", bold);
-
 /* Tapeworm */
 @include helpers.define_font("Tapeworm", "Tapeworm");
-
-/* SF Mono */
-@include helpers.define_font("SFMono-Medium", "SFMono", medium);
-
-// Global vars
-$sans: MaisonNeue, Helvetica, sans-serif;
 
 html, body {
 	height: 100%;
 }
-// body {
-// 	font-family: $sans; 
-// }
+
+body {
+	font-family: $sans; 
+}
 
 #gallery-promo {
 	visibility: visible;
@@ -39,9 +32,7 @@ html, body {
 	}
 
 	@include windows98.dragable;
-
 	@include windows98.promo-window;
-
 
 	header {
 		position: absolute;
@@ -94,42 +85,17 @@ html, body {
 	button[aria-label="Toggle Site View"] {
 		padding: 3.75em 3.25em;
 		background-color: #fff ;
-	}
-
-	button[aria-label="Toggle Site View"] > span {
-		display: block;
-		font-family: "Pixelated MS Sans Serif";
-		font-size: 0.9em;
+		
+		& > span {
+			display: block;
+			font-family: windows98.$ms-sans;
+			font-size: 0.9em;
+		}
 	}
 }
 
 .simple {
-	position: relative;
-	left: 10vw;
-	top: 10vh;
-	max-width: 75ch;
-	font-family: SFMono;
-	font-weight: medium;
-	font-size: 0.85em;
-	line-height: 1.25;
-	color: #777;
-}
-
-.simple a {
-	color: #777;
-}
-
-.simple .divider {
-	padding: 0.2em 0em;
-}
-
-.simple .home {
-	padding-top: 1.5em;
-}
-
-.simple .home a {
-	font-style: oblique;
-	text-decoration: none;
+	@include simple.simple;
 }
 
 @media only screen and (max-width: 1000px) {

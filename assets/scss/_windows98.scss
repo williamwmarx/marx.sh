@@ -8,6 +8,11 @@ $slight-shadow-hover: 3px 6px 24px rgba(0, 0, 0, 0.5);
 $raised-shadow: inset -1px -1px #0a0a0a,inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
 $sunken-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
 
+/* Windows 98 MS Sans Serif */
+@include helpers.define_font("ms_sans_serif", "Pixelated MS Sans Serif");
+@include helpers.define_font("ms_sans_serif_bold", "Pixelated MS Sans Serif", bold);
+$ms-sans: "Pixelated MS Sans Serif", "Helvetica", "Arial", monospace;
+
 @mixin dragable {
 	#dragable {
 		position: absolute;
@@ -24,7 +29,7 @@ $sunken-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px 
 @mixin promo-window {
 	.window {
 		position: absolute;
-		font-family: "Pixelated MS Sans Serif";
+		font-family: $ms-sans;
 		font-weight: bold;
 		font-size: 11px;
 		box-shadow: $raised-shadow, $slight-shadow;
@@ -73,22 +78,27 @@ $sunken-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px 
 				min-height: 14px;
 				background: $surface;
 				box-shadow: $raised-shadow;
+
 				&:active {
 					box-shadow: $sunken-shadow;
 				}
+
 				&:focus {
 					outline: none;
 				}
+
 				&[aria-label="Minimize"] {
 					background-image: url("../icons/minimize.svg");
 					background-repeat: no-repeat;
 					background-position: bottom 4px center;
 				}
+
 				&[aria-label="Maximize"] {
 					background-image: url("../icons/maximize.svg");
 					background-repeat: no-repeat;
 					background-position: top 2px center;
 				}
+
 				&[aria-label="Close"] {
 					background-image: url("../icons/close.svg");
 					background-repeat: no-repeat;
