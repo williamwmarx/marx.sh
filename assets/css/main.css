@@ -1,3 +1,4 @@
+@use "windows98";
 /* Define local fonts */
 /* Maison Neue */
 @font-face {
@@ -48,143 +49,118 @@ body {
 
 #gallery-promo {
   visibility: visible; }
-
-#gallery-promo * {
-  margin: 0;
-  padding: 0;
-  border: none;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent; }
-
-#gallery-promo #dragable {
-  position: absolute;
-  display: flex;
-  z-index: 9; }
-
-#gallery-promo #dragable #dragzone {
-  width: 100%;
-  height: 100%;
-  z-index: 10; }
-
-#gallery-promo .window {
-  position: absolute;
-  font-family: "Pixelated MS Sans Serif";
-  font-weight: bold;
-  font-size: 11px;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf, 2px 4px 18px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.2s;
-  background: #c0c0c0;
-  padding: 3px 3px 1px 3px; }
-
-#gallery-promo .window.drag {
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf, 3px 6px 24px rgba(0, 0, 0, 0.5); }
-
-#gallery-promo .window a {
-  cursor: pointer; }
-
-#gallery-promo .window img {
-  width: 450px; }
-
-#gallery-promo .title-bar {
-  cursor: grab;
-  background: linear-gradient(90deg, #000080, #1084d0);
-  padding: 3px 2px 3px 3px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-
-#gallery-promo .window.drag .title-bar {
-  cursor: grabbing; }
-
-#gallery-promo .title-bar span {
-  font-weight: bold;
-  color: white;
-  letter-spacing: 0;
-  margin: 0px 24px 0px 2px; }
-
-#gallery-promo .title-bar aside {
-  display: flex; }
-
-#gallery-promo .title-bar aside button {
-  margin-left: 2px;
-  padding: 0;
-  display: block;
-  min-width: 16px;
-  min-height: 14px;
-  background: #c0c0c0;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf; }
-
-#gallery-promo .title-bar aside button:active {
-  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080; }
-
-#gallery-promo .title-bar aside button:focus {
-  outline: none; }
-
-#gallery-promo .title-bar aside button[aria-label="Minimize"] {
-  background-image: url("../icons/minimize.svg");
-  background-repeat: no-repeat;
-  background-position: bottom 4px center; }
-
-#gallery-promo .title-bar aside button[aria-label="Maximize"] {
-  background-image: url("../icons/maximize.svg");
-  background-repeat: no-repeat;
-  background-position: top 2px center; }
-
-#gallery-promo .title-bar aside button[aria-label="Close"] {
-  background-image: url("../icons/close.svg");
-  background-repeat: no-repeat;
-  background-position: center; }
-
-#gallery-promo header {
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  padding: 1em 8em 1em 2em; }
-
-#gallery-promo p {
-  font-family: TTContrast;
-  font-size: 1.1em;
-  margin: 0.75em 0 0.75em 0; }
-
-#gallery-promo a {
-  position: relative;
-  display: inline-block;
-  bottom: 1px;
-  font-family: MaisonNeue, Helvetica, sans-serif;
-  font-size: 0.92em;
-  color: black;
-  text-decoration: none; }
-
-#gallery-promo hr {
-  border-top: 1px solid black; }
-
-#gallery-promo .sans {
-  position: relative;
-  display: inline-block;
-  bottom: 1px;
-  font-family: MaisonNeue, Helvetica, sans-serif;
-  font-size: 0.92em; }
-
-#gallery-promo #overlay {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  display: none;
-  background-color: #fff;
-  z-index: 1000;
-  text-align: center;
-  line-height: calc(0.97 * 100vh);
-  font-family: "Tapeworm";
-  font-size: 4vw; }
-
-#gallery-promo button[aria-label="Toggle Site View"] {
-  padding: 3.75em 3.25em;
-  background-color: #fff; }
-
-#gallery-promo button[aria-label="Toggle Site View"] > span {
-  display: block;
-  font-family: "Pixelated MS Sans Serif";
-  font-size: 0.9em; }
+  #gallery-promo * {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent; }
+  #gallery-promo #dragable {
+    position: absolute;
+    display: flex;
+    z-index: 9; }
+    #gallery-promo #dragable #dragzone {
+      width: 100%;
+      height: 100%;
+      z-index: 10; }
+  #gallery-promo .window {
+    position: absolute;
+    font-family: "Pixelated MS Sans Serif";
+    font-weight: bold;
+    font-size: 11px;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf, 2px 4px 18px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.2s;
+    background: #c0c0c0;
+    padding: 3px 3px 1px 3px; }
+    #gallery-promo .window.drag {
+      box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf, 3px 6px 24px rgba(0, 0, 0, 0.5); }
+      #gallery-promo .window.drag .title-bar {
+        cursor: grabbing; }
+    #gallery-promo .window a {
+      cursor: pointer; }
+    #gallery-promo .window img {
+      width: 450px; }
+  #gallery-promo .title-bar {
+    cursor: grab;
+    background: linear-gradient(90deg, #000080, #1084d0);
+    padding: 3px 2px 3px 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    #gallery-promo .title-bar span {
+      font-weight: bold;
+      color: white;
+      letter-spacing: 0;
+      margin: 0px 24px 0px 2px; }
+    #gallery-promo .title-bar aside {
+      display: flex; }
+      #gallery-promo .title-bar aside button {
+        margin-left: 2px;
+        padding: 0;
+        display: block;
+        min-width: 16px;
+        min-height: 14px;
+        background: #c0c0c0;
+        box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf; }
+        #gallery-promo .title-bar aside button:active {
+          box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080; }
+        #gallery-promo .title-bar aside button:focus {
+          outline: none; }
+        #gallery-promo .title-bar aside button[aria-label="Minimize"] {
+          background-image: url("../icons/minimize.svg");
+          background-repeat: no-repeat;
+          background-position: bottom 4px center; }
+        #gallery-promo .title-bar aside button[aria-label="Maximize"] {
+          background-image: url("../icons/maximize.svg");
+          background-repeat: no-repeat;
+          background-position: top 2px center; }
+        #gallery-promo .title-bar aside button[aria-label="Close"] {
+          background-image: url("../icons/close.svg");
+          background-repeat: no-repeat;
+          background-position: center; }
+  #gallery-promo header {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 1em 8em 1em 2em; }
+  #gallery-promo p {
+    font-family: TTContrast;
+    font-size: 1.1em;
+    margin: 0.75em 0 0.75em 0; }
+  #gallery-promo a {
+    position: relative;
+    display: inline-block;
+    bottom: 1px;
+    font-family: MaisonNeue, Helvetica, sans-serif;
+    font-size: 0.92em;
+    color: black;
+    text-decoration: none; }
+  #gallery-promo hr {
+    border-top: 1px solid black; }
+  #gallery-promo .sans {
+    position: relative;
+    display: inline-block;
+    bottom: 1px;
+    font-family: MaisonNeue, Helvetica, sans-serif;
+    font-size: 0.92em; }
+  #gallery-promo #overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background-color: #fff;
+    z-index: 1000;
+    text-align: center;
+    line-height: calc(0.97 * 100vh);
+    font-family: "Tapeworm";
+    font-size: 4vw; }
+  #gallery-promo button[aria-label="Toggle Site View"] {
+    padding: 3.75em 3.25em;
+    background-color: #fff; }
+  #gallery-promo button[aria-label="Toggle Site View"] > span {
+    display: block;
+    font-family: "Pixelated MS Sans Serif";
+    font-size: 0.9em; }
 
 .simple {
   position: relative;
@@ -196,19 +172,15 @@ body {
   font-size: 0.85em;
   line-height: 1.25;
   color: #777; }
-
-.simple a {
-  color: #777; }
-
-.simple .divider {
-  padding: 0.2em 0em; }
-
-.simple .home {
-  padding-top: 1.5em; }
-
-.simple .home a {
-  font-style: oblique;
-  text-decoration: none; }
+  .simple a {
+    color: #777; }
+  .simple .divider {
+    padding: 0.2em 0em; }
+  .simple .home {
+    padding-top: 1.5em; }
+    .simple .home a {
+      font-style: oblique;
+      text-decoration: none; }
 
 @media only screen and (max-width: 1000px) {
   #gallery-promo {

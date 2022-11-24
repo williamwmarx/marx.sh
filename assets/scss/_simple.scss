@@ -1,0 +1,33 @@
+@use "helpers";
+
+/* SF Mono */
+@include define_font("SFMono-Medium", "SFMono", medium);
+$mono: SFMono, "Courier", monospace;
+
+@mixin simple {
+	position: relative;
+	left: 10vw;
+	top: 10vh;
+	max-width: 75ch;
+	font-family: $mono;
+	font-weight: medium;
+	font-size: 0.85em;
+	line-height: 1.25;
+	color: #777;
+
+	a {
+		color: #777;
+	}
+
+	.divider {
+		padding: 0.2em 0em;
+	}
+
+	.home {
+		padding-top: 1.5em;
+		a {
+			font-style: oblique;
+			text-decoration: none;
+		}
+	}
+}
