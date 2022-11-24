@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>William W. Marx & Co.</title>
+		<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="assets/css/minimal.css"/>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-MV9RWXQ');</script>
+	</head>
+	<body>
+		<main>
+			<p>
+				If you’re here, you’re probably unfamiliar with
+				<a="https://en.wikipedia.org/wiki/GNU_Privacy_Guard">GPG</a>. To oversimplify, it’s a
+				widely-used set of encryption tools that help ensure only the people you want to be able to
+				decrypt something can decrypt it — and all without agreeing to some shared password
+				beforehand.
+			</p>
+
+			<p>
+				For a friendly introduction into asymmetric cryptography (the basis for GPG), I recommend
+				you check out <a href="https://youtu.be/GSIDS_lvRv4">this video</a>. I’ve always found the
+				folks at Computerphile to explain things well.
+			</p>
+
+			<p>
+				To ecnrypt something with my public key, paste the text you want to send me in the text box
+				below and click ”convert”. Then you can copy this encrypted output and send it to me. All
+				the encryption is done on your computer, so no need to worry about the data being leaked
+				through your network. Don’t believe me? Good! Security skepticism is a healthy quality. This
+				whole site is open-sourced, so check out the Typescript file I’m using to encrypt everything
+				<a href="https://github.com/williamwmarx/marx.sh/blob/main/assets/ts/gpg.ts">here</a>.
+			</p>
+
+			<textarea placeholder="Input text to encrypt here."></textarea>
+			<button onclick="encryptText()">Encrypt</button>
+		</main>
+		<script type="text/javascript" src="assets/js/gpg.js"></script>
+	</body>
+</html>

@@ -2,4 +2,11 @@
 
 main {
 	@include simple.simple;
+	textarea {
+		width: 60%;
+		height: 8em;
+	}
+	button {
+		display: block;
+	}
 }
