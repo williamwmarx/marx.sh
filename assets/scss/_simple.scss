@@ -1,7 +1,7 @@
 @use "helpers";
 
 /* SF Mono */
-@include define_font("SFMono-Medium", "SFMono", medium);
+@include helpers.define_font("SFMono-Medium", "SFMono", medium);
 $mono: SFMono, "Courier", monospace;
 
 @mixin simple {

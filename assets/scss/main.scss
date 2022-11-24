@@ -1,211 +1,106 @@
-/* Define local fonts */
-@mixin define_font($filepath_basename, $name, $weight: normal, $style: normal) {
-	@font-face {
-		src: url("../fonts/#{$filepath_basename}.woff2") format("woff2"),
-				 url("../fonts/#{$filepath_basename}.woff") format("woff"),
-				 url("../fonts/#{$filepath_basename}.otf") format("otf");
-		font-family: #{$name};
-		font-weight: #{$weight};
-		font-style: #{$style};
-	}
-}
-
+@use "helpers";
+@use "simple";
+@use "windows98";
 /* Maison Neue */
-@include define_font("MaisonNeue-Book", "MaisonNeue");
+@include helpers.define_font("MaisonNeue-Book", "MaisonNeue");
 
 /* TT Contrast */
-@include define_font("TTContrast", "TTContrast");
+@include helpers.define_font("TTContrast", "TTContrast");
 
 /* Windows 98 MS Sans Serif */
-@include define_font("ms_sans_serif", "Pixelated MS Sans Serif");
-@include define_font("ms_sans_serif_bold", "Pixelated MS Sans Serif", bold);
+@include helpers.define_font("ms_sans_serif", "Pixelated MS Sans Serif");
+@include helpers.define_font("ms_sans_serif_bold", "Pixelated MS Sans Serif", bold);
 
 /* Tapeworm */
-@include define_font("Tapeworm", "Tapeworm");
+@include helpers.define_font("Tapeworm", "Tapeworm");
 
 /* SF Mono */
-@include define_font("SFMono-Medium", "SFMono", medium);
+@include helpers.define_font("SFMono-Medium", "SFMono", medium);
 
 // Global vars
-$windows98-gradient: linear-gradient(90deg, #000080, #1084d0);
-$surface: #c0c0c0;
-$slight-shadow: 2px 4px 18px rgba(0, 0, 0, 0.2);
-$slight-shadow-hover: 3px 6px 24px rgba(0, 0, 0, 0.5);
-$raised-shadow: inset -1px -1px #0a0a0a,inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
-$sunken-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
 $sans: MaisonNeue, Helvetica, sans-serif;
 
 html, body {
 	height: 100%;
 }
-
-body {
-	font-family: $sans; 
-}
+// body {
+// 	font-family: $sans; 
+// }
 
 #gallery-promo {
 	visibility: visible;
-}
 
-#gallery-promo * {
-	margin: 0;
-	padding: 0;
-	border: none;
-	box-sizing: border-box;
-	-webkit-tap-highlight-color: transparent;
-}
+	* {
+		margin: 0;
+		padding: 0;
+		border: none;
+		box-sizing: border-box;
+		-webkit-tap-highlight-color: transparent;
+	}
 
-#gallery-promo #dragable {
-	position: absolute;
-	display: flex;
-	z-index: 9;
-}
-#gallery-promo #dragable #dragzone {
-	width: 100%;
-	height: 100%;
-	z-index: 10;
-}
+	@include windows98.dragable;
 
-#gallery-promo .window {
-	position: absolute;
-	font-family: "Pixelated MS Sans Serif";
-	font-weight: bold;
-	font-size: 11px;
-	box-shadow: $raised-shadow, $slight-shadow;
-	transition: box-shadow 0.2s;
-	background: $surface;
-	padding: 3px 3px 1px 3px;
-}
+	@include windows98.promo-window;
 
-#gallery-promo .window.drag {
-	box-shadow: $raised-shadow, $slight-shadow-hover;
-}
 
-#gallery-promo .window a {
-	cursor: pointer;
-}
+	header {
+		position: absolute;
+		bottom: 0px;
+		width: 100%; 
+		padding: 1em 8em 1em 2em;
+	}
 
-#gallery-promo .window img {
-	width: 450px;
-}
+	p {
+		font-family: TTContrast;
+		font-size: 1.1em;
+		margin: 0.75em 0 0.75em 0;
+	}
 
-#gallery-promo .title-bar {
-	cursor: grab;
-	background: $windows98-gradient;
-	padding: 3px 2px 3px 3px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
+	a {
+		position: relative;
+		display: inline-block;
+		bottom: 1px;
+		font-family: $sans;
+		font-size: 0.92em;
+		color: black;
+		text-decoration: none;
+	}
 
-#gallery-promo .window.drag .title-bar {
-	cursor: grabbing;
-}
+	hr {
+		border-top: 1px solid black;
+	}
 
-#gallery-promo .title-bar span {
-	font-weight: bold;
-	color: white;
-	letter-spacing: 0;
-	margin: 0px 24px 0px 2px;
-}
+	.sans {
+		position: relative;
+		display: inline-block;
+		bottom: 1px;
+		font-family: $sans;
+		font-size: 0.92em;
+	}
 
-#gallery-promo .title-bar aside {
-	display: flex;
-}
+	#overlay {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		display: none;
+		background-color: #fff;
+		z-index: 1000;
+		text-align: center;
+		line-height: calc(0.97 * 100vh);
+		font-family: "Tapeworm";
+		font-size: 4vw;
+	}
 
-#gallery-promo .title-bar aside button {
-	margin-left: 2px;
-	padding: 0;
-	display: block;
-	min-width: 16px;
-	min-height: 14px;
-	background: $surface;
-	box-shadow: $raised-shadow;
-}
+	button[aria-label="Toggle Site View"] {
+		padding: 3.75em 3.25em;
+		background-color: #fff ;
+	}
 
-#gallery-promo .title-bar aside button:active {
-	box-shadow: $sunken-shadow;
-}
-
-#gallery-promo .title-bar aside button:focus {
-	outline: none;
-}
-
-#gallery-promo .title-bar aside button[aria-label="Minimize"] {
-	background-image: url("../icons/minimize.svg");
-	background-repeat: no-repeat;
-	background-position: bottom 4px center;
-}
-
-#gallery-promo .title-bar aside button[aria-label="Maximize"] {
-	background-image: url("../icons/maximize.svg");
-	background-repeat: no-repeat;
-	background-position: top 2px center;
-}
-
-#gallery-promo .title-bar aside button[aria-label="Close"] {
-	background-image: url("../icons/close.svg");
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-#gallery-promo header {
-	position: absolute;
-	bottom: 0px;
-	width: 100%; 
-	padding: 1em 8em 1em 2em;
-}
-
-#gallery-promo p {
-	font-family: TTContrast;
-	font-size: 1.1em;
-	margin: 0.75em 0 0.75em 0;
-}
-
-#gallery-promo a {
-	position: relative;
-	display: inline-block;
-	bottom: 1px;
-	font-family: $sans;
-	font-size: 0.92em;
-	color: black;
-	text-decoration: none;
-}
-
-#gallery-promo hr {
-	border-top: 1px solid black;
-}
-
-#gallery-promo .sans {
-	position: relative;
-	display: inline-block;
-	bottom: 1px;
-	font-family: $sans;
-	font-size: 0.92em;
-}
-
-#gallery-promo #overlay {
-	position: fixed;
-	width: 100vw;
-	height: 100vh;
-	display: none;
-	background-color: #fff;
-	z-index: 1000;
-	text-align: center;
-	line-height: calc(0.97 * 100vh);
-	font-family: "Tapeworm";
-	font-size: 4vw;
-}
-
-#gallery-promo button[aria-label="Toggle Site View"] {
-	padding: 3.75em 3.25em;
-	background-color: #fff ;
-}
-
-#gallery-promo button[aria-label="Toggle Site View"] > span {
-	display: block;
-	font-family: "Pixelated MS Sans Serif";
-	font-size: 0.9em;
+	button[aria-label="Toggle Site View"] > span {
+		display: block;
+		font-family: "Pixelated MS Sans Serif";
+		font-size: 0.9em;
+	}
 }
 
 .simple {
