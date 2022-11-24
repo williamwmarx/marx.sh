@@ -1,14 +1,21 @@
-const sleep = async (ms) => {
-	await new Promise(resolve => {
-		return setTimeout(resolve, ms)
-	});
-}
-
-const showOverlay = async (text) => {
-	/* Display overlay with text when clicking any window menu-bar buttons */
-	overlay = document.getElementById("overlay");
-	overlay.innerHTML = text;
-	overlay.style.display = "block";
-	await sleep(2000);
-	location.replace("https://gallery.marx.design");
-}
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+const sleep = (ms) => __awaiter(this, void 0, void 0, function* () {
+    yield new Promise(resolve => {
+        return setTimeout(resolve, ms);
+    });
+});
+const showOverlay = (text) => __awaiter(this, void 0, void 0, function* () {
+    const overlay = document.getElementById("overlay");
+    overlay.innerHTML = text;
+    overlay.style.display = "block";
+    yield sleep(2000);
+    location.replace("https://gallery.marx.sh");
+});

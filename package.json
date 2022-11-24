@@ -4,7 +4,10 @@
   "description": "A personal site, or something",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile-sass": "sass --no-source-map --style=\"compressed\" -w assets/scss/main.scss assets/css/main.css"
+    "compile-ts": "tsc --build --watch",
+		"compile-main-sass": "sass --no-source-map --style=\"compressed\" -w assets/scss/main.scss assets/css/main.css",
+		"compile-minimal-sass": "sass --no-source-map --style=\"compressed\" -w assets/scss/minimal.scss assets/css/minimal.css",
+		"minify": "uglifyjs --compress --mangle -o assets/js/main.min.js -- assets/js/main.js && uglifyjs --compress --mangle -o assets/js/buttons.min.js -- assets/js/buttons.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,8 @@
   },
   "homepage": "https://github.com/williamwmarx/marx.sh#readme",
   "dependencies": {
-    "sass": "^1.56.1"
+    "sass": "^1.56.1",
+    "typescript": "^4.9.3",
+    "uglify-js": "^3.17.4"
   }
 }
