@@ -41,12 +41,20 @@
 				<a href="https://github.com/williamwmarx/marx.sh/blob/main/gpg-encrypt.html">here</a>.
 			</p>
 
+			<p class="divider">
+				--------
+			</p>
+
 			<textarea placeholder="Input text to encrypt here."></textarea>
 			<button onclick="encryptText()">Encrypt</button>
+
+			<p class="home">
+				<a href="/">home</a>
+			</p>
+
 		</main>
 
 		<script type="text/javascript"> const gpgURL = "https://keys.openpgp.org/vks/v1/by-fingerprint/AAA31FBCBD81A455373418929206B1B4F54B544F";
-
 			const loadGPGKey = async () =>  {
 				return fetch(gpgURL)
 					.then(response => response.text())

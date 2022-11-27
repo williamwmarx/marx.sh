@@ -5,9 +5,9 @@
 $mono: SFMono, "Courier", monospace;
 
 @mixin simple {
-	position: relative;
-	left: 10vw;
-	top: 10vh;
+	position: fixed;
+	left: 12vw;
+	top: 15vh;
 	max-width: 60ch;
 	font-family: $mono;
 	font-weight: medium;
@@ -27,6 +27,13 @@ $mono: SFMono, "Courier", monospace;
 		padding-top: 1.5em;
 		a {
 			font-style: oblique;
+			text-decoration: none;
+		}
+	}
+
+	span {
+		& > a {
+			display: block;
 			text-decoration: none;
 		}
 	}
