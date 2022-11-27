@@ -21,8 +21,6 @@ body {
 }
 
 #gallery-promo {
-	visibility: visible;
-
 	* {
 		margin: 0;
 		padding: 0;
@@ -97,15 +95,6 @@ body {
 }
 
 #simple {
-	visibility: hidden;
+	padding-top: 5vh;
 	@include simple.simple;
-}
-
-@media only screen and (max-width: 1000px) {
-	#gallery-promo {
-		visibility: hidden;
-	}
-	.simple {
-		visibility: visible;
-	}
 }

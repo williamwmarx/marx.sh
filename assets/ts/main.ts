@@ -1,16 +1,20 @@
 /* Keeping track of styling */
 function setSiteView() {
-	if (document.cookie === "minStyle=true") {
-		document.getElementById("gallery-promo")!.style.visibility = "hidden";
-		document.getElementById("simple")!.style.visibility = "visible";
+	if (document.cookie === "minStyle=true" || window.innerWidth < 1000) {
+		document.getElementById("gallery-promo")!.style.display = "none";
+		document.getElementById("simple")!.style.display = "block";
 	} else {
-		document.getElementById("gallery-promo")!.style.visibility = "visible";
-		document.getElementById("simple")!.style.visibility = "hidden";
+		document.getElementById("gallery-promo")!.style.display = "block";
+		document.getElementById("simple")!.style.display = "none";
 	}
 }
 
 function toggleSiteView() {
-	document.cookie = (document.cookie === "minStyle=true") ? "minStyle=false" : "minStyle=true";
+	if (window.innerWidth < 1000) {
+		document.cookie = "minStyle=true";
+	} else {
+		document.cookie = (document.cookie === "minStyle=true") ? "minStyle=false" : "minStyle=true";
+	}
 	setSiteView();
 }
 

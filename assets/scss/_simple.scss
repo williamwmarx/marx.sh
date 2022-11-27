@@ -37,4 +37,18 @@ $mono: SFMono, "Courier", monospace;
 			text-decoration: none;
 		}
 	}
+
+	@media only screen and (max-width: 1000px) {
+		& {
+			top: 8vh;
+			padding-bottom: 8vh;
+			position: relative;
+			font-size: 0.8em;
+			max-width: 72vw;
+		}
+
+		#site-toggle {
+			display: none;
+		}
+	}
 }
