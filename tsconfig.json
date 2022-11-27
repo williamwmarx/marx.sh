@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"module": "es2022",
+		"lib": ["esnext", "dom"],
+		"moduleResolution": "node",
+		"removeComments": true,
+		"sourceMap": false,
+		"outDir": "assets/js",
+		"target": "es2017"
+	},
+	"include": [
+		"assets/ts/**/*"
+	]
+}

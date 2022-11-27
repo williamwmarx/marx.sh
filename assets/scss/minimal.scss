@@ -1,0 +1,13 @@
+@use "simple";
+
+main {
+	@include simple.simple;
+	textarea {
+		width: 60%;
+		height: 8em;
+	}
+	button {
+		margin-top: 0.1em;
+		display: block;
+	}
+}

@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>William W. Marx & Co.</title>
+		<title>William W. Marx</title>
 		<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
 		<!-- Google Tag Manager -->
@@ -14,12 +14,12 @@
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-MV9RWXQ');</script>
 		<!-- Manage Art Store window button functions -->
-		<script type="text/javascript" src="assets/js/buttons.js"></script>
+		<script type="text/javascript" src="assets/js/buttons.min.js"></script>
 	</head>
 
 	<body>
-		<!-- Desktop view (>1000px wide) -->
-		<section id="desktop">
+		<!-- Gallery Promo view (>1000px wide default) -->
+		<section id="gallery-promo">
 			<!-- Header (displayed at bottom of page) -->
 			<header>
 				<p>
@@ -28,7 +28,7 @@
 				<hr/>
 				<p>
 					(DIGITAL) <a href="https://instagram.com/williamwmarx">@williamwmarx</a> —
-					<a href="mailto:something@marx.design">something@marx.design</a> |
+					<a href="mailto:hey@marx.sh">hey@marx.sh</a> |
 					(PHYSICAL) <span id="time" class="sans">00:00:00</span> <span class="sans">[New York, NY (U.S.A.)]</span>
 				</p>
 			</header>
@@ -45,7 +45,7 @@
 								<button aria-label="Close" onclick="showOverlay('NICE TRY BUCKO')"/>
 							</aside>
 						</div>
-						<a href="https://gallery.marx.design">
+						<a href="https://gallery.marx.sh">
 							<picture>
 								<source srcset="assets/images/curated_vacancy.avif" type="image/avif"/>
 								<source srcset="assets/images/curated_vacancy.webp" type="image/webp"/>
@@ -56,69 +56,57 @@
 				</div>
 			</div>
 
+			<!-- README -->
+			<button aria-label="Toggle Site View" onclick="toggleSiteView()">
+				<picture>
+					<source srcset="assets/icons/directory.avif" type="image/avif"/>
+					<source srcset="assets/icons/directory.webp" type="image/webp"/>
+					<img src="assets/icons/directory.png" alt="README">
+				</picture>
+				<span>README</span>
+			</button>
+
 			<!-- Overlay to display if triggered -->
 			<div id="overlay"></div>
 		</section>
 
-		<!-- Mobile view (<1000px wide) -->
-		<section id="mobile">
-			<!-- Button to toggle list of links -->
-			<button onclick="toggleMobileMenu()">
-				William W. Marx
-				<picture>
-					<source srcset="assets/icons/magnify.avif" type="image/avif"/>
-					<source srcset="assets/icons/magnify.webp" type="image/webp"/>
-					<img src="assets/icons/magnify.png" alt="Magnifying Glass">
-				</picture>
-			</button>
+		<!-- Simpler site, I like this more -->
+		<section id="simple">
+			<p>
+				Hi, I’m Will.
+			</p>
 
-			<!-- List of links -->
-			<nav id="menu">
-				<a href="https://gallery.marx.design">
-					<picture>
-						<source srcset="assets/icons/wingedcash.avif" type="image/avif"/>
-						<source srcset="assets/icons/wingedcash.webp" type="image/webp"/>
-						<img src="assets/icons/wingedcash.png" alt="Money with Wings Emoji">
-					</picture>
-					<span>#</span>ART STORE<span>#</span>
-				</a>
-				<a href="https://atemp.studio">
-					<picture>
-						<source srcset="assets/icons/mirror.avif" type="image/avif"/>
-						<source srcset="assets/icons/mirror.webp" type="image/webp"/>
-						<img src="assets/icons/mirror.png" alt="Mirror Emoji">
-					</picture>
-					<span>#</span>A-TEMP<span>#</span>
-				</a>
-				<a href="aboutme.txt">
-					<picture>
-						<source srcset="assets/icons/astronaut.avif" type="image/avif"/>
-						<source srcset="assets/icons/astronaut.webp" type="image/webp"/>
-						<img src="assets/icons/astronaut.png" alt="Astronaut Emoji">
-					</picture>
-					<span>#</span>ABOUTME.TXT<span>#</span>
-				</a>
-				<a href="https://instagram.com/williamwmarx">
-					<picture>
-						<source srcset="assets/icons/candle.avif" type="image/avif"/>
-						<source srcset="assets/icons/candle.webp" type="image/webp"/>
-						<img src="assets/icons/candle.png" alt="Candle Emoji">
-					</picture>
-					<span>#</span>INSTAGRAM<span>#</span>
-				</a>
-				<a href="mailto:something@marx.design">
-					<picture>
-						<source srcset="assets/icons/postbox.avif" type="image/avif"/>
-						<source srcset="assets/icons/postbox.webp" type="image/webp"/>
-						<img src="assets/icons/postbox.png" alt="Postbox Emoji">
-					</picture>
-					<span>#</span>AEROGRAM<span>#</span>
-				</a>
-			</nav>
+			<p>
+				I'm a bricoleur, but that’s more so a reflection of how I see the world than what I do.
+			</p>
+
+			<p>
+				I once had an overdone site with text moving everywhere and bold logos marketing all that I
+				do. Then I simplified it to the Windows-98-esque homepage you saw (if on your desktop)
+				before arriving here. This iteration feels more fitting.
+			</p>
+
+			<p id="site-toggle">
+				If you’d like to go back to the other version of the site,
+				<a href="javascript:toggleSiteView()">click here</a>.
+			</p>
+
+			<p class="divider">
+				--------
+			</p>
+
+			<span>
+				<a href="/projects">~/.projects</a>
+				<a href="https://github.com/williamwmarx/.dotfiles/blob/main/personal/.plan">~/.plan</a>
+				<a href="https://gallery.marx.sh">~/.gallery</a>
+				<a href="/contact">~/.contact</a>
+				<a href="/notes">~/.notes</a>
+			</span>
 		</section>
 
 		<!-- Main JS functions -->
-		<script type="text/javascript" src="assets/js/main.js"></script>
+		<script type="text/javascript" src="assets/js/main.min.js"></script>
+
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MV9RWXQ"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>William W. Marx</title>
+		<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="assets/css/minimal.css"/>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-MV9RWXQ');</script>
+		<!-- OpenPGP JS -->
+		<script type="text/javascript" src="assets/js3p/openpgp.min.js"></script>
+	</head>
+	<body>
+		<main>
+			<p>
+				If you’re here, you’re probably unfamiliar with
+				<a="https://en.wikipedia.org/wiki/GNU_Privacy_Guard">GPG</a>. To oversimplify, it’s a
+				widely-used set of encryption tools that help ensure only the people you want to be able to
+				decrypt something can decrypt it — and all without agreeing to some shared password
+				beforehand.
+			</p>
+
+			<p>
+				For a friendly introduction into asymmetric cryptography (the basis for GPG), I recommend
+				you check out <a href="https://youtu.be/GSIDS_lvRv4">this video</a>. I’ve always found the
+				folks at Computerphile to explain things well.
+			</p>
+
+			<p>
+				To ecnrypt something with my public key, paste the text you want to send me in the text box
+				below and click ”convert”. Then you can copy this encrypted output and send it to me. All
+				the encryption is done on your computer, so no need to worry about the data being leaked
+				through your network. Don’t believe me? Good! Security skepticism is a healthy quality. This
+				whole site is open-sourced, so check out the file I’m using to encrypt everything
+				<a href="https://github.com/williamwmarx/marx.sh/blob/main/gpg-encrypt.html">here</a>.
+			</p>
+
+			<p class="divider">
+				--------
+			</p>
+
+			<textarea placeholder="Input text to encrypt here."></textarea>
+			<button onclick="encryptText()">Encrypt</button>
+
+			<p class="home">
+				<a href="/">home</a>
+			</p>
+
+		</main>
+
+		<script type="text/javascript"> const gpgURL = "https://keys.openpgp.org/vks/v1/by-fingerprint/AAA31FBCBD81A455373418929206B1B4F54B544F";
+			const loadGPGKey = async () =>  {
+				return fetch(gpgURL)
+					.then(response => response.text())
+					.then(publicKey => {return publicKey});
+			}
+
+			const copyEncryptedText = () => {
+				const textarea = document.getElementsByTagName("textarea")[0];
+				const button = document.getElementsByTagName("button")[0];
+				const encryptedMessage = textarea.value;
+				navigator.clipboard.writeText(encryptedMessage);
+				textarea.value = "";
+				button.innerText = "Encrypt";
+				button.setAttribute("onclick", "encryptText()");
+			}
+
+			const encryptText = async () => {
+				const gpgPublicKey = await loadGPGKey();
+				const textarea = document.getElementsByTagName("textarea")[0];
+				const button = document.getElementsByTagName("button")[0];
+				if (textarea != null) {
+					const encryptedMessage = await openpgp.encrypt({
+						message: await openpgp.createMessage({ text: textarea.value }),
+						encryptionKeys: await openpgp.readKey({ armoredKey: gpgPublicKey })
+					})
+					textarea.value = encryptedMessage;
+					button.innerText = "Copy to Clipboard";
+					button.setAttribute("onclick", "copyEncryptedText()");
+				}
+			}
+		</script>
+	</body>
+</html>
