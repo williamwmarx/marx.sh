@@ -1,3 +1,26 @@
+/* Keeping track of styling */
+function setSiteView() {
+	if (document.cookie === "minStyle=true") {
+		document.getElementById("gallery-promo")!.style.visibility = "hidden";
+		document.getElementById("simple")!.style.visibility = "visible";
+	} else {
+		document.getElementById("gallery-promo")!.style.visibility = "visible";
+		document.getElementById("simple")!.style.visibility = "hidden";
+	}
+}
+
+function toggleSiteView() {
+	document.cookie = (document.cookie === "minStyle=true") ? "minStyle=false" : "minStyle=true";
+	setSiteView();
+}
+
+if (document.cookie === "") {
+	document.cookie = "minStyle=false";
+}
+
+setSiteView()
+
+
 /* Gallery Promo */
 /* Ticking clock */
 function getStudioTime() {
@@ -8,6 +31,7 @@ function getStudioTime() {
 
 getStudioTime();
 setInterval(getStudioTime, 1000);
+
 
 /* Dragable store window */
 const dragElement = (element: HTMLElement, dragzone: HTMLElement) => {
@@ -50,9 +74,3 @@ let availableWidth = window.innerWidth - windowSize.width;
 dragable.style.top = `${Math.floor((0.05 * availableHeight) + (0.3 * Math.random() * availableHeight))}px`;
 dragable.style.left = `${Math.floor((0.65 * availableWidth) + (0.3 * Math.random() * availableWidth))}px`;
 dragElement(dragable, dragzone);
-
-/* OTHER */
-function toggleSiteView() {
-	document.getElementById("gallery-promo")!.style.visibility = "hidden";
-	document.getElementById("simple")!.style.visibility = "visible";
-}

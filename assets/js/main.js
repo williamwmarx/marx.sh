@@ -1,3 +1,21 @@
+function setSiteView() {
+    if (document.cookie === "minStyle=true") {
+        document.getElementById("gallery-promo").style.visibility = "hidden";
+        document.getElementById("simple").style.visibility = "visible";
+    }
+    else {
+        document.getElementById("gallery-promo").style.visibility = "visible";
+        document.getElementById("simple").style.visibility = "hidden";
+    }
+}
+function toggleSiteView() {
+    document.cookie = (document.cookie === "minStyle=true") ? "minStyle=false" : "minStyle=true";
+    setSiteView();
+}
+if (document.cookie === "") {
+    document.cookie = "minStyle=false";
+}
+setSiteView();
 function getStudioTime() {
     var dateString = new Date().toLocaleString('en-US', { hour12: false, timeZone: 'America/New_York' }).split(" ")[1];
     const timeSpan = document.getElementById("time");
@@ -40,7 +58,3 @@ let availableWidth = window.innerWidth - windowSize.width;
 dragable.style.top = `${Math.floor((0.05 * availableHeight) + (0.3 * Math.random() * availableHeight))}px`;
 dragable.style.left = `${Math.floor((0.65 * availableWidth) + (0.3 * Math.random() * availableWidth))}px`;
 dragElement(dragable, dragzone);
-function toggleSiteView() {
-    document.getElementById("gallery-promo").style.visibility = "hidden";
-    document.getElementById("simple").style.visibility = "visible";
-}
