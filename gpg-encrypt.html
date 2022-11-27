@@ -13,6 +13,8 @@
 		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-MV9RWXQ');</script>
+		<!-- OpenPGP JS -->
+		<script type="text/javascript" src="assets/js3p/openpgp.min.js"></script>
 	</head>
 	<body>
 		<main>
@@ -35,13 +37,46 @@
 				below and click ”convert”. Then you can copy this encrypted output and send it to me. All
 				the encryption is done on your computer, so no need to worry about the data being leaked
 				through your network. Don’t believe me? Good! Security skepticism is a healthy quality. This
-				whole site is open-sourced, so check out the Typescript file I’m using to encrypt everything
-				<a href="https://github.com/williamwmarx/marx.sh/blob/main/assets/ts/gpg.ts">here</a>.
+				whole site is open-sourced, so check out the file I’m using to encrypt everything
+				<a href="https://github.com/williamwmarx/marx.sh/blob/main/gpg-encrypt.html">here</a>.
 			</p>
 
 			<textarea placeholder="Input text to encrypt here."></textarea>
 			<button onclick="encryptText()">Encrypt</button>
 		</main>
-		<script type="text/javascript" src="assets/js/gpg.js"></script>
+
+		<script type="text/javascript"> const gpgURL = "https://keys.openpgp.org/vks/v1/by-fingerprint/AAA31FBCBD81A455373418929206B1B4F54B544F";
+
+			const loadGPGKey = async () =>  {
+				return fetch(gpgURL)
+					.then(response => response.text())
+					.then(publicKey => {return publicKey});
+			}
+
+			const copyEncryptedText = () => {
+				const textarea = document.getElementsByTagName("textarea")[0];
+				const button = document.getElementsByTagName("button")[0];
+				const encryptedMessage = textarea.value;
+				navigator.clipboard.writeText(encryptedMessage);
+				textarea.value = "";
+				button.innerText = "Encrypt";
+				button.setAttribute("onclick", "encryptText()");
+			}
+
+			const encryptText = async () => {
+				const gpgPublicKey = await loadGPGKey();
+				const textarea = document.getElementsByTagName("textarea")[0];
+				const button = document.getElementsByTagName("button")[0];
+				if (textarea != null) {
+					const encryptedMessage = await openpgp.encrypt({
+						message: await openpgp.createMessage({ text: textarea.value }),
+						encryptionKeys: await openpgp.readKey({ armoredKey: gpgPublicKey })
+					})
+					textarea.value = encryptedMessage;
+					button.innerText = "Copy to Clipboard";
+					button.setAttribute("onclick", "copyEncryptedText()");
+				}
+			}
+		</script>
 	</body>
 </html>
