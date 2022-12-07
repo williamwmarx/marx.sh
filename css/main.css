@@ -1,0 +1,52 @@
+@font-face {
+	src: url("../fonts/SFMono-Medium.woff2") format("woff2"),
+			 url("../fonts/SFMono-Medium.woff") format("woff"),
+			 url("../fonts/SFMono-Medium.otf") format("otf");
+	font-family: SFMono;
+}
+
+html, body {
+	height: 100%;
+}
+
+#root {
+	position: fixed;
+	left: 12vw;
+	top: 15vh;
+	/* padding-top: 5vh;*/
+	max-width: 64ch;
+	font-family: SFMono, Courier, monospace;
+	font-weight: medium;
+	font-size: 0.85em;
+	line-height: 1.25;
+	color: #777;
+}
+
+a {
+	color: #777;
+}
+
+.divider {
+	padding: 0.2em 0em;
+}
+
+.home {
+	padding-top: 1.5em;
+}
+
+.home a {
+	font-style: oblique;
+	text-decoration: none;
+}
+
+span > a {
+	display: block;
+	text-decoration: none;
+}
+
+@media only screen and (max-width: 1000px) {
+	#root {
+		top: 8vh;
+		padding-bottom: 8vh;
+	}
+}
