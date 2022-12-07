@@ -13,7 +13,6 @@ html, body {
 	position: fixed;
 	left: 12vw;
 	top: 15vh;
-	/* padding-top: 5vh;*/
 	max-width: 64ch;
 	font-family: SFMono, Courier, monospace;
 	font-weight: medium;
@@ -42,6 +41,13 @@ a {
 span > a {
 	display: block;
 	text-decoration: none;
+}
+
+textarea {
+	display: block;
+	margin-bottom: 0.5em;
+	width: 80%;
+	height: 10em;
 }
 
 @media only screen and (max-width: 1000px) {
