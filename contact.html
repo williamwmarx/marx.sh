@@ -13,67 +13,50 @@
 		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-MV9RWXQ');</script>
+		<style>
+			a {
+				font-style: oblique;
+			}
+
+			a:hover {
+				cursor: pointer;
+			}
+
+			span > a {
+				font-style: normal;
+			}
+		</style>
 	</head>
 	<body>
 		<div id="root">
-			<p>
-				The easiest way to reach out is probably email. It’s a bit of a clunky way of communicating,
-				I know, but it’s easy to organize, so if it’s anything more than a casual “hey”, email’s
-				probably the best place to start.
-			</p>
-
-			<p>
-				If a message need be particularly secure, you can encrypt it with my
-				<a href="https://github.com/williamwmarx.gpg">public key</a>. Not familiar with
-				<a href="https://en.wikipedia.org/wiki/GNU_Privacy_Guard"</a>GPG</a>? No problem. I've made
-				a <a href="gpg-encrypt">webpage</a> to encrypt any text with my key for you.
-			</p>
-
-			<p>
-				The links below have pre-filled subjects that help me sort incoming emails so I can respond
-				more efficiently. Feel free to append to the emails’ subjects but please don’t delete them.
-			</p>
-
-			<span id="email-links">
-				<a href="mailto:hey@marx.sh?subject=[GENERAL]">general →</a>
-				<a href="mailto:hey@marx.sh?subject=[PORTFOLIO REQUEST]">portfolio →</a>
-				<a href="mailto:hey@marx.sh?subject=[COLLABORATION INQUIRY]">collab →</a>
-				<a href="mailto:hey@marx.sh?subject=[BUSINESS INQUIRY]">business →</a>
-			</span>
-
-			<p class="divider">
-				--------
-			</p>
-
-			<p>
-				Bored of email? I get it. Slide into my
-				<a href="https://instagram.com/williamwmarx">Instagram</a> DMs for a less-formal chat.
-			</p>
-
-			<p>
-				You can do the same for my <a href="https://twitter.com/williamwmarx">Twitter</a>, but I
-				deleted the app after it became an hate-filled cesspool, so I won't see your message unless
-				I log in through the browser.
-			</p>
-
-			<p>
-				I'm not too keen on any other social media sites and at some point may even walk away from
-				the ones I have. I tend to agree with
-				<a href="https://en.wikipedia.org/wiki/Jaron_Lanier">Jaron Lanier’s</a> 
-				<a href="http://www.jaronlanier.com/tenarguments.html">writings on social media</a>, though
-				I still do enjoy using it to see the things my friends are proud of doing.
-			</p>
-
-			<p>
-				Discord is new to me, but I’m optimistic about its ability to be a healthy home for
-				community discussion. If you want to have an interesting discussion in the open, feel free
-				to join <a href="https://discord.gg/3WMCQeb8Uh">the studio server</a> and start it
-				there.
-			</p>
-
-			<p class="home">
-				<a href="/">home</a>
-			</p>
+			<p>Are you trying to contact me <a id="formally">formally</a> or 
+			<a id="casually">casually</a>?
 		</div>
+
+		<script>
+			formalHTML = `<p>email’s the way to go. click on the link that best describes what you’re contacting me about — it’ll open up an email template that helps me sort everything coming in:</p>
+			<span>
+				<a href="mailto:hey@marx.sh?subject=Business%20Inquiry%3A%20&body=Feel%20free%20to%20append%20to%20the%20subject%20as%20needed%2C%20but%20please%20keep%20the%20existing%20text.%20You%20can%20delete%20this%20line%20%E2%80%94%20thanks%20for%20your%20help%20%F0%9F%99%8F%F0%9F%99%8F%E2%9C%A8%E2%9C%A8%E2%9C%A8.">🗃️ business →</a>
+				<a href="mailto:hey@marx.sh?subject=Collaborative%20Work%20Inquiry%3A%20&body=Feel%20free%20to%20append%20to%20the%20subject%20as%20needed%2C%20but%20please%20keep%20the%20existing%20text.%20You%20can%20delete%20this%20line%20%E2%80%94%20thanks%20for%20your%20help%20%F0%9F%99%8F%F0%9F%99%8F%E2%9C%A8%E2%9C%A8%E2%9C%A8.">🤝 collaborative work →</a>
+				<a href="mailto:hey@marx.sh?subject=Portfolio%20Request%3A%20&body=Feel%20free%20to%20append%20to%20the%20subject%20as%20needed%2C%20but%20please%20keep%20the%20existing%20text.%20You%20can%20delete%20this%20line%20%E2%80%94%20thanks%20for%20your%20help%20%F0%9F%99%8F%F0%9F%99%8F%E2%9C%A8%E2%9C%A8%E2%9C%A8.">📂 portfolio request →</a>
+				<a href="/secure-contact">🔐 top secret →</a>
+				<a href="mailto:hey@marx.sh?subject=General%20Inquiry%3A%20&body=Feel%20free%20to%20append%20to%20the%20subject%20as%20needed%2C%20but%20please%20keep%20the%20existing%20text.%20You%20can%20delete%20this%20line%20%E2%80%94%20thanks%20for%20your%20help%20%F0%9F%99%8F%F0%9F%99%8F%E2%9C%A8%E2%9C%A8%E2%9C%A8.">🎲 something else →</a>
+			</span>`;
+
+			casualHTML = `<p>it goes down in the dm</p>
+			<span>
+				<a href="https://instagram.con/williamwmarx">📸 @williamwmarx →</a>
+			</span>`;
+
+			function handleFormal() {
+				document.getElementById("root").innerHTML = formalHTML;
+			}
+			function handleCasual() {
+				document.getElementById("root").innerHTML = casualHTML;
+			}
+
+			document.getElementById("formally").addEventListener("click", handleFormal)
+			document.getElementById("casually").addEventListener("click", handleCasual)
+		</script>
 	</body>
 </html>
