@@ -1,8 +1,17 @@
 @font-face {
-	src: url("../fonts/SFMono-Medium.woff2") format("woff2"),
-			 url("../fonts/SFMono-Medium.woff") format("woff"),
-			 url("../fonts/SFMono-Medium.otf") format("otf");
-	font-family: SFMono;
+	src: url("../fonts/FragmentMono-Regular.woff2") format("woff2"),
+			 url("../fonts/FragmentMono-Regular.woff") format("woff"),
+			 url("../fonts/FragmentMono-Regular.otf") format("otf");
+	font-family: FragmentMono;
+	font-style: normal;
+}
+
+@font-face {
+	src: url("../fonts/FragmentMono-Italic.woff2") format("woff2"),
+			 url("../fonts/FragmentMono-Italic.woff") format("woff"),
+			 url("../fonts/FragmentMono-Italic.otf") format("otf");
+	font-family: FragmentMono;
+	font-style: italic;
 }
 
 html, body {
@@ -10,11 +19,12 @@ html, body {
 }
 
 #root {
-	position: fixed;
+	position: absolute;
 	left: 12vw;
 	top: 15vh;
+	padding-right: 12vw;
 	max-width: 64ch;
-	font-family: SFMono, Courier, monospace;
+	font-family: FragmentMono, Courier, monospace;
 	font-weight: medium;
 	font-size: 0.85em;
 	line-height: 1.25;
@@ -54,5 +64,6 @@ textarea {
 	#root {
 		top: 8vh;
 		padding-bottom: 8vh;
+		font-size: 0.78em;
 	}
 }
