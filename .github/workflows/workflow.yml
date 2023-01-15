@@ -21,7 +21,8 @@ jobs:
         aws --profile r2-deploy configure set aws_secret_access_key ${{ secrets.R2_SECRET_ACCESS_KEY }}
     - name: Deploy site to R2 bucket
       run: |
-        aws s3 sync ${SOURCE_DIR} ${{ secrets.R2_BUCKET }} --profile r2-deploy --no-progress \
-          --follow-symlinks --delete
+        aws s3api sync --endpoint-url ${{ secrets.R2_ENDPOINT_URL }} ${SOURCE_DIR} s3://${R2_BUCKET} \
+          --profile r2-deploy --no-progress --follow-symlinks --delete
       env:
         SOURCE_DIR: dist
+        R2_BUCKET: marx-sh
